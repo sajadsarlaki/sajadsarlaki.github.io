@@ -10,8 +10,7 @@ export default class About extends Component {
             <div className="three columns">
 
             <div id="container-inside">
-            <img className="profile-pic"  src="images/profile-pic.jpg" alt=""  />
-
+                  <img className="profile-pic"  src="images/profile-pic.jpg" alt=""  />
                 <div id="circle-small">
                 </div>
                 <div id="circle-medium"></div>
