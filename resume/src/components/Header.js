@@ -60,7 +60,7 @@ export default class Header extends Component {
                <li><a className="smoothscroll" href="#contact">Contact</a></li>
             </ul>
          </nav>
-         <div className="header-container" >
+         <div className="header-container"  >
             <div id="image-div" className="bg-img-div" onMouseEnter={()=>this.mouseEnter()}  onMouseLeave={()=>this.mouseLeave()}>
               <img src="images/Sajad.jpg" alt="" className="bg-img" />
               <img src="images/Sajad2.jpg" alt="" className="bg-img2"  />
