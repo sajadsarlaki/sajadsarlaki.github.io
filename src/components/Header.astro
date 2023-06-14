@@ -1,15 +1,96 @@
 ---
-import  '../styles/header.css'
-import {header} from '../data/data.json';
+import HoverReveal from "./HoverReveal.astro";
+
+import { header } from "../data/data.json";
 ---
+
 <header>
-     <h1>{header.title}</h1>
-  <nav >
-    <a href="#about">About ME</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#work-experience">Work Experience</a>
-    <a href="#project">Projects</a>
-    <a href="#hobbies">Hobbies</a>
-  </nav>
+	<!-- <h1>{header.title}</h1> -->
+	<nav>
+		<a href="#about">About ME</a>
+		<a href="#skills">Skills</a>
+		<a href="#education">Education</a>
+		<a href="#work">Work Experience</a>
+		<a href="#projects">Projects</a>
+		<a href="#hobbies">Hobbies</a>
+		<div class="theme-btn">
+			<!-- <img class="icon"  src="/asset/gifs/moon2.gif" alt="moon">
+      <img class="icon"  src="/asset/gifs/sun.gif" alt="sun"> -->
+			<button id="theme-toggle"/>
+			<!-- <HoverReveal
+				text="Hover over me"
+				gifUrl="asset/gifs/moon.gif"
+				position="inset"
+			/> -->
+		</div>
+	</nav>
 </header>
+
+<style>
+  nav {
+	background-color: transparent;
+	display: flex;
+	justify-content: flex-start;
+	gap: 1rem;
+	margin: 1rem;
+  position: relative;
+}
+
+a {
+	color: rgb(219 225 232 / var(--tw-text-opacity));
+  font-size: 1.25rem;
+  font-weight: 700;
+	text-decoration: none;
+	margin: 0 1rem;
+  padding:1rem;
+	transition: color 0.5s;
+}
+
+a:hover {
+	color: #ff8c00;
+}
+
+.theme-btn{
+  position: absolute;
+  right: 5rem;
+  top: 2%;
+}
+
+
+
+
+.icon,button{
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  
+}
+button{
+  width: 50px;
+  height: 50px;
+  background-image: var(--icon-url);
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 1s;
+
+}
+button:hover{
+  /* transform: scale(1.1); */
+  background-image: var(--gif-icon-url) ;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	a {
+		margin: 5px 0;
+	}
+}
+</style>

@@ -1,11 +1,61 @@
    ---
    import {about} from '../data/data.json';
-   import '../styles/about.css'
    ---
 
    <section id="about">
-     <h2>{about.title}</h2>
+    <div class="text">
+     <h2 class="title">{about.title}</h2>
      {about.paragraphs.map((paragraph) => (
        <p>{paragraph}</p>
      ))}
+    </div>
+    <div class="picture">
+      <img class="image" src="asset/imgs/sajad.png" alt="" />
+    </div>
+      <img src="asset/gifs/portal.gif" alt="" class="portal">
+
    </section>
+
+
+<style>
+  .text{
+    all: unset;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid red;
+    padding: 1rem;
+  }
+  section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 10000px;
+  
+  }
+  
+  .picture{
+    position: relative;
+
+  }
+  .image{
+    padding: 5rem;
+    margin-right: 18rem;
+  }
+  .portal{
+    height: 700px;
+    position:absolute;
+    z-index: -1;
+    top:-5%;
+    right: 0;
+    transform: rotateY(55deg);
+    transform-style: preserve-3d;
+    
+
+  }
+  .title{
+    font-size: 2rem;
+  }
+</style>
