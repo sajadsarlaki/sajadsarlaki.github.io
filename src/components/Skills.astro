@@ -1,0 +1,14 @@
+   ---
+   import {skillsContent} from '../data/data.json';
+   import '../styles/Skills.css'
+   ---
+
+
+   <section id="skills">
+     <h2>{skillsContent.title}</h2>
+     <ul>
+       {skillsContent.skills.map((skill) => (
+         <li>{skill}</li>
+       ))}
+     </ul>
+   </section>

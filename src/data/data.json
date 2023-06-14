@@ -1,5 +1,5 @@
 {
-	"title": "John Doe",
+	"header": {"title": "Sajad Sarlaki"},
 	"about": {
 		"title": "About Me",
 		"paragraphs": [
@@ -8,7 +8,7 @@
 			"I am passionate about building great user experiences..."
 		]
 	},
-	"skils": {
+	"skillsContent": {
 		"title": "Skills",
 		"skills": [
 			"React",
@@ -20,7 +20,7 @@
 			"CSS"
 		]
 	},
-	"education": {
+	"educationContent": {
 		"title": "Education",
 		"degrees": [
 			{
@@ -35,7 +35,7 @@
 			}
 		]
 	},
-	"Work": {
+	"workExperienceContent": {
 		"title": "Work Experience",
 		"jobs": [
 			{
@@ -50,7 +50,7 @@
 			}
 		]
 	},
-	"projects": {
+	"projectsContent": {
 		"title": "Projects",
 		"projects": [
 			{
@@ -67,7 +67,7 @@
 			}
 		]
 	},
-	"hobbies": {
+	"hobbiesContent": {
 		"title": "Hobbies",
 		"hobbies": ["Reading", "Traveling", "Photography", "Coding"]
 	}

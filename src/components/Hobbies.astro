@@ -1,0 +1,13 @@
+   ---
+   import {hobbiesContent} from '../data/data.json';
+   import '../styles/Hobbies.css'
+   ---
+
+   <section id="hobbies">
+     <h2>{hobbiesContent.title}</h2>
+     <ul>
+       {hobbiesContent.hobbies.map((hobby) => (
+         <li>{hobby}</li>
+       ))}
+     </ul>
+   </section>

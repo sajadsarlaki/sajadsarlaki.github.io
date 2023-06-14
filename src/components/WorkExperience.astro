@@ -1,0 +1,17 @@
+   ---
+   import {workExperienceContent} from '../data/data.json';
+   import '../styles/Skills.css'
+   ---
+
+ 
+
+   <section id="work-experience">
+     <h2>{workExperienceContent.title}</h2>
+     <ul>
+       {workExperienceContent.jobs.map((job) => (
+         <li>
+           <strong>{job.position}</strong> - {job.company} ({job.year})
+         </li>
+       ))}
+     </ul>
+   </section>

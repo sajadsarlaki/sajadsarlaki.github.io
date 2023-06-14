@@ -1,0 +1,11 @@
+   ---
+   import {about} from '../data/data.json';
+   import '../styles/about.css'
+   ---
+
+   <section id="about">
+     <h2>{about.title}</h2>
+     {about.paragraphs.map((paragraph) => (
+       <p>{paragraph}</p>
+     ))}
+   </section>

@@ -1,0 +1,16 @@
+   ---
+  import {educationContent} from '../data/data.json';
+   import '../styles/Skills.css'
+   ---
+
+
+   <section id="education">
+     <h2>{educationContent.title}</h2>
+     <ul>
+       {educationContent.degrees.map((degree) => (
+         <li>
+           <strong>{degree.degree}</strong> - {degree.institution} ({degree.year})
+         </li>
+       ))}
+     </ul>
+   </section>

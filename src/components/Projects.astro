@@ -1,0 +1,16 @@
+   ---
+   import {projectsContent} from '../data/data.json';
+   import '../styles/Projects.css'
+   ---
+
+
+   <section id="projects">
+     <h2>{projectsContent.title}</h2>
+     <ul>
+       {projectsContent.projects.map((project) => (
+         <li>
+           <strong>{project.name}</strong> - {project.description}
+         </li>
+       ))}
+     </ul>
+   </section>
