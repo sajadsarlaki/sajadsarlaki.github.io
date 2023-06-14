@@ -1,0 +1,74 @@
+{
+	"title": "John Doe",
+	"about": {
+		"title": "About Me",
+		"paragraphs": [
+			"I am a Frontend Developer with 2 years of experience...",
+			"I am currently working as a Frontend Developer...",
+			"I am passionate about building great user experiences..."
+		]
+	},
+	"skils": {
+		"title": "Skills",
+		"skills": [
+			"React",
+			"Angular",
+			"Vue.js",
+			"JavaScript",
+			"TypeScript",
+			"HTML",
+			"CSS"
+		]
+	},
+	"education": {
+		"title": "Education",
+		"degrees": [
+			{
+				"degree": "Bachelor of Science in Computer Science",
+				"institution": "Amirkabir University of Technology",
+				"year": "2015-2019"
+			},
+			{
+				"degree": "High School Diploma in Mathematics and Physics",
+				"institution": "National Organization for Development of Exceptional Talents",
+				"year": "2011-2015"
+			}
+		]
+	},
+	"Work": {
+		"title": "Work Experience",
+		"jobs": [
+			{
+				"position": "Frontend Developer",
+				"company": "Bayan",
+				"year": "2020-Present"
+			},
+			{
+				"position": "Teaching Assistant",
+				"company": "Amirkabir University of Technology",
+				"year": "2019-2020"
+			}
+		]
+	},
+	"projects": {
+		"title": "Projects",
+		"projects": [
+			{
+				"name": "Project A",
+				"description": "A description of Project A."
+			},
+			{
+				"name": "Project B",
+				"description": "A description of Project B."
+			},
+			{
+				"name": "Project C",
+				"description": "A description of Project C."
+			}
+		]
+	},
+	"hobbies": {
+		"title": "Hobbies",
+		"hobbies": ["Reading", "Traveling", "Photography", "Coding"]
+	}
+}
