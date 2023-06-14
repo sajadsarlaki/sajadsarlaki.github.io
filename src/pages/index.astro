@@ -20,6 +20,8 @@ import '../styles/global.css'
 <body>
   <Header />
   <main>
+       <button id="theme-toggle">Toggle Theme</button>
+
     <About />
     <Skills />
     <Education />
@@ -30,3 +32,20 @@ import '../styles/global.css'
 </body>
 
 </html>
+
+   <script>
+     const themeToggle = document.getElementById('theme-toggle');
+     themeToggle.addEventListener('click', () => {
+       document.body.classList.toggle('light-theme');
+       const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+       localStorage.setItem('theme', theme);
+     });
+
+     // Load the saved theme from localStorage
+     document.addEventListener('DOMContentLoaded', () => {
+       const savedTheme = localStorage.getItem('theme');
+       if (savedTheme === 'light') {
+         document.body.classList.add('light-theme');
+       }
+     });
+   </script>
