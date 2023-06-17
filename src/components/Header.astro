@@ -28,6 +28,7 @@ import { header } from "../data/data.json";
 
 <style>
   nav {
+	
 	background-color: transparent;
 	display: flex;
 	justify-content: flex-start;
@@ -43,11 +44,12 @@ a {
 	text-decoration: none;
 	margin: 0 1rem;
   padding:1rem;
-	transition: color 0.5s;
+	transition: color 0.5s, transform 0.5s;
 }
 
 a:hover {
-	color: #ff8c00;
+	color: var(--orange-color);
+	transform: scale(1.07)
 }
 
 .theme-btn{

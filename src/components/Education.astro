@@ -1,5 +1,6 @@
    ---
   import {educationContent} from '../data/data.json';
+  import SectionTitle from './SectionTitle.astro';
    ---
 
 
@@ -12,4 +13,12 @@
          </li>
        ))}
      </ul>
+     <SectionTitle text="hobbies" color="var(--light-purple-color)" hrefLink="#hobbies"/>
+
    </section>
+
+   <style>
+    #education{
+      position: relative;
+    }
+   </style>

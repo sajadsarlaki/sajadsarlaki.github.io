@@ -1,25 +1,54 @@
 @import url(./theme.css);
-   html {
-     scroll-behavior: smooth;
-   }
+:root {
+	--bg-color: #12181b;
+	--star-size: 0.05rem;
+}
+@property --star-size {
+	/* An initial value for our custom property */
+	initial-value: 0.05rem;
+	/* Whether it inherits from parent set values or not */
+	inherits: false;
+	/* The type. Yes, the type. You thought TypeScript was cool */
+	syntax: "<length>";
+}
+
+html {
+	scroll-behavior: smooth;
+}
 
 body {
-	background-image: var(--background-image);
+	background-image: radial-gradient(
+      circle at center,
+      #aaaa 0px,
+      transparent 1px);
+	background-color: var(--background-color);
 	color: var(--text-color);
 	padding: 0;
 	margin: 0;
 	font-family: var(--main-font-family);
+	background-size: 2rem 2rem, 24rem 24rem;
+	background-position: 0 0, 1rem 1rem;
+	animation: star 10s infinite ease;
 }
 
 a {
 	color: var(--text-color);
 }
 
-section {
+section:not(section:first-child) {
 	/* border: 1px solid red; */
 	padding: 0;
 	margin: 0;
 	box-shadow: 0 0 1rem #0005;
-	
-	
+	height: 90vh;
+	padding: 5vh 0 5vh 0;
+}
+
+@keyframes star {
+	from {
+		--star-size: 0.05rem;
+	}
+	to {
+		--star-size: 0.25rem;
+	}
 }

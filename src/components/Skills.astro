@@ -1,5 +1,6 @@
    ---
    import {skillsContent} from '../data/data.json';
+import SectionTitle from './SectionTitle.astro';
    ---
 
 
@@ -10,4 +11,12 @@
          <li>{skill}</li>
        ))}
      </ul>
+   <SectionTitle text="Projects" color="var(--green-color)" hrefLink="#projects"/>
+
    </section>
+
+   <style>
+    #skills{
+      position: relative;
+    }
+   </style>

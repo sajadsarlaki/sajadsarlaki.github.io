@@ -1,48 +1,51 @@
 ---
-const { text, gifUrl, position = top, size = 50 } = Astro.props;
+const { text, gifUrl, position = 'top', size =100, class:className } = Astro.props;
 ---
 
 <style>
   .hover-container {
     position: relative;
-    display: inline-block;
-    top: 10rem;
-    right: 10rem;
+    display: inline;
+    /* top: 10rem;
+    right: 10rem; */
   }
 
   .hover-text {
-    cursor: pointer;
-    display: block
+    display: inline;
+    cursor: inherit;
   }
 
   .hover-gif {
     position: absolute;
     left: 0%;
     visibility: hidden;
+    aspect-ratio: 16:9;
   }
 
   .hover-text:hover ~ .hover-gif {
     visibility: visible !important;
   }
-
+:root{
+  --gif-size-to-position: -200px
+}
   .top{
-    top: -200%;
+    top: var(--gif-size-to-position);
   }
   .botton{
-    bottom: -200%;
+    bottom: var(--gif-size-to-position);
   }
   .left{
-    left:-200%
+    left:var(--gif-size-to-position)
   }
   .right{
-    right: -200;
+    right: var(--gif-size-to-position);
   }
   .inset{
     inset: 0;
   }
 </style>
 
-<div class="hover-container">
-  <span class="hover-text" >{text}</span>
- <img class={`hover-gif ${position}`} src={gifUrl} alt="" width={size} height={size} >
-</div>
+<span class="hover-container">
+  <span class={`hover-text ${className}`} >{text}</span>
+ <img class={`hover-gif ${position} `}  src={gifUrl} alt="" width={size} height={size} >
+</span>

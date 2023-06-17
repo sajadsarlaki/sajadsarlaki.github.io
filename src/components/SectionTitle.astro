@@ -1,0 +1,40 @@
+---
+const { text, color, hrefLink, beckon = true } = Astro.props;
+---
+
+<a href={hrefLink}
+    ><h2 style={`background-color:${color}`}>
+        {text}
+    </h2>
+</a>
+{beckon ? (<span class="beckon text-5xl block"> 👇</span>):""}
+<style>
+    h2,
+    .beckon {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    h2 {
+        font-size: 3.75rem;
+        padding: 0.5rem 1.5rem;
+        color: var(--background-color);
+
+        font-family: var(--second-font-family);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+            0 8px 10px -6px rgb(0 0 0 / 0.1);
+        font-weight: 100;
+    }
+    .beckon {
+        font-size: 2.75rem;
+        animation: beckon-animation 1s cubic-bezier(0.8, 0, 1, 1) alternate
+            infinite;
+        bottom: 0;
+    }
+    @keyframes beckon-animation {
+        to {
+            transform: translate(-50%, 0) translateY(-25%);
+        }
+    }
+</style>

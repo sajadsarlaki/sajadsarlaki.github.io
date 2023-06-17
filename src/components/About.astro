@@ -1,61 +1,91 @@
-   ---
-   import {about} from '../data/data.json';
-   ---
+---
+import { about } from "../data/data.json";
+import HoverReveal from "./HoverReveal.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
 
-   <section id="about">
-    <div class="text">
-     <h2 class="title">{about.title}</h2>
-     {about.paragraphs.map((paragraph) => (
-       <p>{paragraph}</p>
-     ))}
-    </div>
-    <div class="picture">
-      <img class="image" src="asset/imgs/sajad.png" alt="" />
-    </div>
-      <img src="asset/gifs/portal.gif" alt="" class="portal">
-
-   </section>
-
+<section id="about">
+  <div class="text">
+    <!-- <h2 class="title">{about.title}</h2> -->
+    <p class="name">{about.paragraphs[0]}</p>
+    {
+      (
+        <p>
+          {about.paragraphs[1].split("Frontend Developer")[0]}
+          <HoverReveal
+            text="Frontend Developer"
+            gifUrl={"asset/gifs/css.gif"}
+            position="top"
+            size="200"
+            class="gifText"
+          />
+          {about.paragraphs[1].split("Frontend Developer")[1]}{" "}
+        </p>
+      )
+    }
+  </div>
+  <div class="picture">
+    <img class="image" src="asset/imgs/sajad.png" alt="" />
+  </div>
+  <img src="asset/gifs/portal.gif" alt="" class="portal" />
+  <SectionTitle text="Work Experience" color="var(--reddish-orange-color)" hrefLink="#work" beckon="true"></SectionTitle>
+</section>
 
 <style>
-  .text{
-    all: unset;
-    width:100%;
+  
+
+  #about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    perspective: 10000px;
+    gap:10%;
+    min-height: 90vh;
+    
+  }
+  #about>div{
+    /* border:1px solid red */
+  }
+.text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid red;
-    padding: 1rem;
-  }
-  section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    perspective: 10000px;
-  
-  }
-  
-  .picture{
-    position: relative;
+    font-size: 1.5rem;
+    cursor:alias;
+    margin-top: 10%;
 
   }
-  .image{
-    padding: 5rem;
-    margin-right: 18rem;
+  .name {
+    all: unset;
+    font-size: 3.75rem;
+    line-height: 2rem;
+    font-family: var(--second-font-family);
+    color:#fff;
+  
   }
-  .portal{
+  .gifText{
+    color: var(--blue-color);
+    font-weight: 700;
+  }
+  span {
+  }
+  .picture {
+    position: relative;
+  }
+  .image {
+    padding: 5rem;
+  }
+  .portal {
     height: 700px;
-    position:absolute;
+    position: absolute;
     z-index: -1;
-    top:-5%;
-    right: 0;
+    top: -5%;
+    right: 5%;
     transform: rotateY(55deg);
     transform-style: preserve-3d;
-    
-
   }
-  .title{
+  .title {
     font-size: 2rem;
   }
 </style>
