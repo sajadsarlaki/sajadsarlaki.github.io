@@ -39,8 +39,7 @@ section:not(section:first-child) {
 	/* border: 1px solid red; */
 	padding: 0;
 	margin: 0;
-	box-shadow: 0 0 1rem #0005;
-	height: 90vh;
+	min-height: 90vh;
 	padding: 5vh 0 5vh 0;
 }
 

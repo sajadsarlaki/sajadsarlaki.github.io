@@ -1,43 +1,61 @@
-   
-   @font-face {
-    font-family: cubano;
-    src: url(../../public/asset/fonts/Cubano-family/Cubano/Cubano.ttf);
-   }  
-   @font-face {
-    font-family: sofia-pro;
-    src: url(../../public/asset/fonts/sofia-pro/sofiapro-light.otf);
-   } 
+@font-face {
+	font-family: cubano;
+	src: url(/asset/fonts/Cubano-family/Cubano/Cubano.ttf);
+}
+@font-face {
+	font-family: sofia-pro;
+	src: url(/asset/fonts/sofia-pro/sofiapro-light.otf);
+}
 
-   :root {
-     /* Dark theme */
-     --background-color: #12181B;
-     --text-color: #B2BECD;
-     --icon-url:  url('asset/imgs/moon.png');
-     --gif-icon-url: url('asset/gifs/moon.gif');
+:root {
+	/* Dark theme */
+	--background-color: #12181b;
+	--text-color: #b2becd;
+	--icon-url: url("asset/imgs/moon.png");
+	--gif-icon-url: url("asset/gifs/moon.gif");
 
-     /*typography */
-     --main-font-family:  sofia-pro,sans-serif;
-     --second-font-family: cubano,sans-serif;
+	/*typography */
+	--main-font-family: sofia-pro, sans-serif;
+	--second-font-family: cubano, sans-serif;
 
-     /*colors*/
-    --contexify-item-color: rgba(0, 0, 0, 0.87) !important;
-    --contexify-activeItem-color: rgba(0, 0, 0, 0.87) !important;
-    --contexify-activeArrow-color: rgba(0, 0, 0, 0.87) !important;
-    --contexify-activeItem-bgColor: rgba(118, 1, 211, 0.04) !important;
-    --orange-color: #F68013;
-    --reddish-orange-color: #EF4444;
-    --green-color: #22C55E;
-    --light-purple-color: #A855F7;
-    --yellow-color: #EAB308;
-    --blue-color: rgb(31,154,255);
-   }
+	/*colors*/
+	--contexify-item-color: rgba(0, 0, 0, 0.87) !important;
+	--contexify-activeItem-color: rgba(0, 0, 0, 0.87) !important;
+	--contexify-activeArrow-color: rgba(0, 0, 0, 0.87) !important;
+	--contexify-activeItem-bgColor: rgba(118, 1, 211, 0.04) !important;
+	--orange-color: #f68013;
+	--reddish-orange-color: #ef4444;
+	--green-color: #22c55e;
+	--light-purple-color: #a855f7;
+	--pink-color: #f77;
+	--purple-color: #100321;
+	--yellow-color: #eab308;
+	--blue-color: rgb(31, 154, 255);
+	--second-orange-color: #f68013;
+	--second-reddish-orange-color: #ff3e00;
+	--second-green-color: #90c53f;
+	--second-light-purple-color: #a855f7;
+	--second-yellow-color: #ffcb2b;
+	--second-blue-color: #3879ab;
 
-   .light-theme {
-     /* Light theme */
-     --background-color: #fffa;
-     --text-color: #12181B;
-     --icon-url:  url('asset/imgs/sun.png'); 
-     --gif-icon-url: url('asset/gifs/sun.gif');
+	/* animations */
+	--fade-in: fade-in 1s ease;
+}
 
+.light-theme {
+	/* Light theme */
+	--background-color: #fffa;
+	--text-color: #12181b;
+	--icon-url: url("asset/imgs/sun.png");
+	--gif-icon-url: url("asset/gifs/sun.gif");
+}
 
-   }
+@keyframes fade-in {
+	from {
+		transform: translateX(-20px);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

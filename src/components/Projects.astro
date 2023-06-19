@@ -1,24 +1,252 @@
-   ---
-   import {projectsContent} from '../data/data.json';
-   import SectionTitle from './SectionTitle.astro';
-   ---
+---
+import { projectsContent } from "../data/data.json";
+import SectionTitle from "./SectionTitle.astro";
+---
 
-
-   <section id="projects">
-     <h2>{projectsContent.title}</h2>
-     <ul>
-       {projectsContent.projects.map((project) => (
-         <li>
-           <strong>{project.name}</strong> - {project.description}
-         </li>
-       ))}
-     </ul>
-  <SectionTitle text="education" color="var(--blue-color)" hrefLink="#education"/>
-
-   </section>
-
-   <style>
-    #projects{
-      position: relative;
+<section id="projects">
+  <ul class="project-list">
+    {
+      projectsContent.projects.map((project, index) => (
+        <a href={project.links.github} target="_blank"><li   class="project-item">
+          <div class="upper-card">
+            <h3 class="title" data-index={index}>
+              {project.title}
+            </h3>
+            {project.imgs.map((src) => (
+              <img data-img-index={index} class="project-img" src={src} />
+            ))}
+          </div>
+          <div class="lower-card">
+            <p class="project-description">{project.description}</p>
+            {project.sub_description.length <= 1 ? (
+              <p class="project-sub-description">{project.sub_description}</p>
+            ) : (
+              <ul class="project-sub-description">
+                {project.sub_description?.map((item) => (
+                  <li >{item}</li>
+                ))}
+              </ul>
+            )}
+            <ul class="kewords">
+                {project.keywords.map((item)=><li class="keyword" data-keyword-index={index}>#{item}</li>)}
+            </ul>
+          </div>
+        </li>
+        </a>
+      ))
     }
-   </style>
+  </ul>
+  <!-- <SectionTitle
+    text="education"
+    color="var(--blue-color)"
+    hrefLink="#education"
+  /> -->
+</section>
+
+<style>
+  #projects {
+    position: relative;
+  }
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0 10%;
+  }
+  a{
+    text-decoration: none;
+  }
+  .project-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    width: 95%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition:.8s .1s ease transform;
+  }
+  .project-item:hover{
+    transform: scale(1.1);
+  }
+
+  .upper-card {
+    height: 25vh;
+    background-color: #1d1e24;
+    padding: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    perspective: 1000px;
+  }
+  .lower-card {
+    min-height: 25vh;
+    background-color: #2a2e35;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    border-radius: 0 0 .5rem .5rem ;
+
+
+  }
+  .title {
+    font-family: var(--second-font-family);
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .project-img {
+    width: 15rem;
+    /* transform-style: preserve-3d; */
+  }
+  .title[data-index="0"] {
+    color: var(--reddish-orange-color);
+  }
+  .title[data-index="1"] {
+    color: var(--green-color);
+  }
+  .title[data-index="2"] {
+    color: var(--yellow-color);
+  }
+  .title[data-index="3"] {
+    color: var(--blue-color);
+  }
+  .title[data-index="4"] {
+    color: var(--orange-color);
+  }
+
+  .project-img[data-img-index="0"] {
+   filter: brightness(160%);
+    width: 35%;
+    position: absolute;
+    right: 15%;
+    top:45%;
+  }
+  .project-img[data-img-index="0"]:nth-child(2) {
+    filter: brightness(86%);
+    position: absolute;
+    width: 50%;
+    top:45%;
+    left: 0;
+  }
+   .project-img[data-img-index="0"]:last-child {
+    filter: brightness(160%);
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    top: 15%;
+  }
+
+  .project-img[data-img-index="1"] {
+    filter: brightness(130%);
+    filter: contrast(120%);
+    filter: drop-shadow(1px 1px 2px #000);
+    width: 100%;
+    position: absolute;
+    left: 0%;
+  }
+
+  .project-img[data-img-index="2"] {
+    filter: brightness(120%);
+    width: 60%;
+    position: absolute;
+    top: 35%;
+  }
+  .project-img[data-img-index="2"]:last-child {
+    width: 70%;
+    position: absolute;
+    right: -10%;
+    top:25%;
+    filter: drop-shadow(10px 0px 2px black);
+  }
+  .project-img[data-img-index="3"] {
+    filter: brightness(100%);
+    width: 85%;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    filter: drop-shadow(1px 1px 5px #000);
+  }  
+  .project-img[data-img-index="4"]{
+    filter: brightness(100%);
+    width: 45%;
+    position: absolute;
+    right: 0%;
+    top: 5%;
+  } 
+   .project-img[data-img-index="4"]:last-child{
+    filter: brightness(100%);
+    width: 50%;
+    position: absolute;
+    right: 45%;
+    top: 25%;
+
+  }
+  .project-description {
+    font-family: var(--second-font-family);
+    font-weight: lighter;
+    padding: 1rem 2rem;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+  .project-sub-description {
+    /* font-weight: 600; */
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+    tab-size: 4;
+    font-family: var(--main-font-family);
+    padding:0 2rem;
+  }
+  .project-sub-description li{
+    margin: 0 1rem;
+  }
+  .kewords{
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style-type: none;
+  
+  }
+  .kewords li{
+    all:unset;
+    padding: .35rem .5rem;
+    background-color: var(--second-yellow-color);
+    border-radius: .45rem;
+    color: #12181a;
+    font-weight: 500;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+    /* filter: brightness(80%); */
+  }
+  .keyword[data-keyword-index="0"]{
+    background-color: var(--second-orange-color);
+  }
+  .keyword[data-keyword-index="0"]:nth-child(2){
+    background-color: var(--second-green-color);
+  }
+  .keyword[data-keyword-index="0"]:last-child{
+    background-color: var(--pink-color);
+  }
+  .keyword[data-keyword-index="1"]{
+    background-color: var(--second-green-color);
+  }
+  .keyword[data-keyword-index="2"]{
+    background-color: var(--second-yellow-color);
+  }
+  .keyword[data-keyword-index="2"]:last-child{
+    background-color: var(--second-green-color);
+  }
+  .keyword[data-keyword-index="3"]{
+    background-color: var(--second-blue-color);
+    color: #fff;
+  }
+  .keyword[data-keyword-index="4"]{
+    background-color: var(--second-blue-color);
+  }
+  .keyword[data-keyword-index="4"]:nth-child(2){
+    filter: brightness(75%);
+    background-color: var(--purple-color);
+    color: #fff;
+  }
+</style>

@@ -23,48 +23,73 @@ import SectionTitle from "./SectionTitle.astro";
         </p>
       )
     }
+    <div class="social-media">
+      {
+        about.social.map((item) => (
+          <a
+            href={item.link}
+            target="_blank"
+            id={item.name}
+            data-static-icon={item.icon}
+            data-animated-icon={item.animatedIcon}
+            class="social-item"
+            style=`background-image:url('${item.icon}'); `
+          ></a>
+        ))
+      }
+    </div>
   </div>
   <div class="picture">
     <img class="image" src="asset/imgs/sajad.png" alt="" />
   </div>
   <img src="asset/gifs/portal.gif" alt="" class="portal" />
-  <SectionTitle text="Work Experience" color="var(--reddish-orange-color)" hrefLink="#work" beckon="true"></SectionTitle>
+  <SectionTitle
+    text="Work Experience"
+    color="var(--reddish-orange-color)"
+    hrefLink="#work"
+    beckon="true"
+  />
 </section>
 
 <style>
-  
-
   #about {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: start;
     perspective: 10000px;
-    gap:10%;
+    gap: 10%;
     min-height: 90vh;
-    
   }
-  #about>div{
-    /* border:1px solid red */
+  .social-media {
+    display: flex;
+    gap: 1rem;
   }
-.text {
+  .social-item{
+    background-size:cover ; 
+     width: 50px;
+     height:50px; 
+     border-radius: 48px;
+     border: 1px solid #fff1;
+     /* padding: .25rem; */
+  }
+  .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-size: 1.5rem;
-    cursor:alias;
+    cursor: alias;
     margin-top: 10%;
-
   }
   .name {
     all: unset;
     font-size: 3.75rem;
     line-height: 2rem;
     font-family: var(--second-font-family);
-    color:#fff;
-  
+    color: #fff;
+    
   }
-  .gifText{
+  .gifText {
     color: var(--blue-color);
     font-weight: 700;
   }
@@ -89,3 +114,18 @@ import SectionTitle from "./SectionTitle.astro";
     font-size: 2rem;
   }
 </style>
+<script>
+  const social = document.querySelector(".social-media");
+  social.querySelectorAll("a").forEach((element) => {
+    console.log(element);
+    element.addEventListener("mouseenter", (e) => {
+      let image = element.getAttribute("data-animated-icon");
+      element.style.backgroundImage = `url('${image}')`
+    });
+    element.addEventListener("mouseleave", (e) => {
+      let image = element.getAttribute("data-static-icon");
+            element.style.backgroundImage = `url('${image}')`
+
+    });
+  });
+</script>

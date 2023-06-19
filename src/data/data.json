@@ -1,5 +1,5 @@
 {
-	"header": {"title": "Sajad Sarlaki"},
+	"header": { "title": "Sajad Sarlaki" },
 	"about": {
 		"title": "About Me",
 		"paragraphs": [
@@ -7,18 +7,83 @@
 			"I am a Frontend Developer with 2 years of experience...",
 			"I am currently working as a Frontend Developer...",
 			"I am passionate about building great user experiences..."
+		],
+		"social": [
+			{
+				"name": "linkedin",
+				"link": "https://www.linkedin.com/in/sajad-sarlaki/",
+				"icon": "/asset/imgs/linkedin.png",
+				"animatedIcon": "/asset/gifs/linkedin.gif"
+			},
+			{
+				"name": "github",
+				"link": "https://github.com/sajadsarlaki",
+				"icon": "/asset/imgs/github.png",
+				"animatedIcon": "/asset/gifs/github.gif"
+			},
+			{
+				"name": "twitter",
+				"link": "https://twitter.com/Sajadsarlaki_",
+				"icon": "/asset/imgs/twitter.png",
+				"animatedIcon": "/asset/gifs/twitter.gif"
+			},
+			{
+				"name": "email",
+				"link": "sajad.sarlaki1999@gmail.com",
+				"icon": "/asset/imgs/gmail.png",
+				"animatedIcon": "/asset/gifs/gmail.gif"
+			}
 		]
 	},
 	"skillsContent": {
 		"title": "Skills",
 		"skills": [
-			"React",
-			"Angular",
-			"Vue.js",
-			"JavaScript",
-			"TypeScript",
-			"HTML",
-			"CSS"
+			{
+				"title": "Programming",
+				"items": ["Javascript (skilled)", "Python", "Java"],
+				"icon": "/asset/imgs/programming.png"
+			},
+			{
+				"title": "Web Development ",
+				"items": ["HTML5", "CSS3", "jQuery", "React"],
+				"icon": "/asset/imgs/web.png"
+			},
+			{
+				"title": "CSS Methodologies",
+				"items": ["SCSS/Sass", "BEM", "Css Modules"],
+				"icon": "/asset/imgs/sass.png"
+			},
+			{
+				"title": "State Management",
+				"items": ["Redux"],
+				"icon": "/asset/imgs/redux.png"
+			},
+			{
+				"title": "Build Tools",
+				"items": ["Webpack"],
+				"icon": "/asset/imgs/webpack.png"
+			},
+			{
+				"title": "Mobile Development",
+				"items": ["React Native"],
+				"icon": "/asset/imgs/react.png"
+			},
+			{
+				"title": "Design Tools",
+				"items": ["Adobe Illustrator", "Figma", "Adobe XD"],
+				"icon": "/asset/imgs/design.png"
+			},
+			{
+				"title": "Other Skills",
+				"items": [
+					"Version Control (Git)",
+					"Responsice Design",
+					"Agile Methodologies (Scrum)",
+					"Server Side Rendering - Next (Familiar)",
+					"Node js"
+				],
+				"icon": "/asset/imgs/more.png"
+			}
 		]
 	},
 	"educationContent": {
@@ -42,12 +107,37 @@
 			{
 				"position": "Frontend Developer",
 				"company": "Bayan",
-				"year": "2020-Present"
+				"year": "2022-Present",
+				"desc": [
+					"Developed front-end mail service applications",
+					"Worked with mail service modules (mail server, postfix, protocols, tools, libs)",
+					"Designed web pages and applications"
+				],
+				"icon": "/asset/imgs/bayan.png"
+			},
+			{
+				"position": "Co-Founder",
+				"company": "Utopia",
+				"year": "2018-2022",
+				"desc": [
+					"Assisted in agricultural platform design and implementation",
+					"Developed mobile app with React Native",
+					"Developed web apps with React js",
+					"Trained interns in React and React hook"
+				],
+				"icon": "/asset/imgs/utopia.png"
 			},
 			{
 				"position": "Teaching Assistant",
 				"company": "Amirkabir University of Technology",
-				"year": "2019-2020"
+				"year": "2018-2020",
+				"desc": [
+					"Teaching Assistant for Advanced Programming",
+					"Teaching Assistant for Signals and Systems",
+					"Teaching Assistant for Computational AI",
+					"Designed, graded assignments, and assisted students with problems"
+				],
+				"icon": "/asset/imgs/amirkabir.png"
 			}
 		]
 	},
@@ -55,16 +145,60 @@
 		"title": "Projects",
 		"projects": [
 			{
-				"name": "Project A",
-				"description": "A description of Project A."
+				"title": "Aragorn‑js",
+				"description": "a JavaScript library for creative coding!",
+				"sub_description":["It is JS lib for creative coding, making 2D educational content with webGl."],
+				"keywords": ["Final project", "Nodejs", "webGL"],
+				"links": {
+					"presentation": "https://prezi.com/view/Y5Q5deoPJhgeVzXI1N76/",
+					"github": "https://github.com/sajadsarlaki/Aragorn"
+				},
+				"imgs": ["/asset/imgs/aragorn.png", "/asset/imgs/heart.png", "/asset/imgs/webgl.png"]
 			},
 			{
-				"name": "Project B",
-				"description": "A description of Project B."
+				"title": "VM‑Managment",
+				"description": "Virtualbox-driven tool for managing virtual machines!",
+				"sub_description": ["Virtual Box based tool: login, CRUD VMs, file ops, command execution via REST API."],
+				"keywords": ["Nodejs", "Virtual_box"],
+				"links": { "github": "https://github.com/sajadsarlaki/vmManagment" },
+				"imgs": ["/asset/imgs/vm.png"]
 			},
 			{
-				"name": "Project C",
-				"description": "A description of Project C."
+				"title": "Computational Intelligence",
+				"description": "CI implementation of some algorithms!",
+				"sub_description": [
+					"Steiner Tree Problem",
+					"EggHolder Evolution Strategy",
+					"Fuzzy Clustering",
+					"Simple-ANN"
+				],
+				"keywords": ["CI", "Nodejs"],
+				"links": {
+					"github": "https://github.com/sajadsarlaki/Computational_Intelligence"
+				},
+				"imgs": ["/asset/imgs/CI1.png", "/asset/imgs/CI2.png"]
+			},
+			{
+				"title": "Data Mining",
+				"description": "Implementation of some DM algorithms!",
+				"sub_description": [
+					"Pixels segmentation using KNN.",
+					"Car security evaluated with Decision-Tree.",
+					"Text-Categorization using Naive-Bayes.",
+					"Binary classification using SVM."
+				],
+				"keywords": ["DM", "Python", "Jupyter"],
+				"links": { "github": "https://github.com/sajadsarlaki/DataMining" },
+				"imgs": ["/asset/imgs/DM.png"]
+			},{
+				"title": "Personal web-page",
+				"description": "Personal webpage!",
+				"sub_description": [
+					"Personal web-page implemented using Astro js!"
+				],
+				"keywords": ["Portfolio","Astrojs", "css"],
+				"links": { "github": "https://github.com/sajadsarlaki/DataMining" },
+				"imgs": ["/asset/imgs/sajad.png","/asset/imgs/astro.png"]
 			}
 		]
 	},

@@ -1,25 +1,71 @@
-   ---
-   import {workExperienceContent} from '../data/data.json';
-   import SectionTitle from './SectionTitle.astro';
-   ---
+---
+import { workExperienceContent } from "../data/data.json";
+import SectionTitle from "./SectionTitle.astro";
+---
 
- 
-
-   <section id="work">
-     <h2>{workExperienceContent.title}</h2>
-     <ul>
-       {workExperienceContent.jobs.map((job) => (
-         <li>
-           <strong>{job.position}</strong> - {job.company} ({job.year})
-         </li>
-       ))}
-     </ul>
-    <SectionTitle text="Skills" color="var(--orange-color)" hrefLink="#skills"/>
-
-   </section>
-
-   <style>
-    #work{
-      position: relative;
+<section id="work">
+  <!-- <h2>{workExperienceContent.title}</h2> -->
+  <ul class="list-container">
+    {
+      workExperienceContent.jobs.map((job) => (
+        <li>
+          <img class="job-icon" src={job.icon} alt="" />
+          <h2>{job.position}</h2>
+          <strong>{job.company} </strong>({job.year})
+          <br />
+          <ul class="desc-list">
+            {job.desc.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </li>
+      ))
     }
-   </style>
+  </ul>
+  <SectionTitle text="Skills" color="var(--orange-color)" hrefLink="#skills" />
+  <div class="line"></div>
+</section>
+
+<style>
+  #work {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+  }
+  .list-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+  }
+  // .list-container>li:nth-child(2n) {
+  //   margin-top: 20%;
+  // }
+  .list-container > li {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    overflow: hidden;
+    width: 25%;
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 1%;
+    font-size: 1.2rem;
+    background-color: #222;
+    padding: 2rem;
+    background: linear-gradient(#12181b, #12181b) padding-box,
+      linear-gradient(to right, #f55, #88f) border-box;
+    border-radius: 0.5rem;
+    border: 4px solid transparent;
+  }
+
+  .job-icon {
+    width: 4rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .desc-list {
+    line-height: 1.5rem;
+  }
+</style>
