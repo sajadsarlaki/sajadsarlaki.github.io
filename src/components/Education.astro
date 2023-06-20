@@ -1,24 +1,133 @@
-   ---
-  import {educationContent} from '../data/data.json';
-  import SectionTitle from './SectionTitle.astro';
-   ---
+---
+import { educationContent } from "../data/data.json";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section id="education">
+  {
+    educationContent.degrees.map((degree) => (
+      <div class="education">
+        <div class="education-desc">
+          <img class="education-img" src={degree.imgs.amirkaboir_icon} alt="" />
+          <h2 class="title">{degree.degree}</h2>
+          <h3>
+            {degree.institution} {degree.year}
+          </h3>
+          <ul class="education-desc-list">
+            {degree.description.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="graduation-imgs">
+          <img src={degree.imgs.graduation} alt="" class="grad" />
+          <img src={degree.imgs.sardar} alt="" class="sardar" />
+        </div>
+      </div>
+    ))
+  }
+
+  <!-- <SectionTitle
+    text="hobbies"
+    color="var(--light-purple-color)"
+    hrefLink="#hobbies"
+  /> -->
+</section>
+
+<style>
+  #education {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .education {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .education-desc {
+    font-weight: 100;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  .education-desc h2 {
+    font-family: var(--second-font-family);
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--blue-color);
+  }
+  .education-desc h3 {
+    margin: 0.5rem 0;
+  }
+  .education-desc-list {
+    list-style-type: none;
+    margin: 0 0.5rem;
+    padding: 0;
+    line-height: 1.5rem;
+  }
+  .graduation-imgs {
+    position:relative
+  }
+  .graduation-imgs{
+    transform: scale(1);
+  }
+
+  .grad{
+    position: absolute;
+    top: -3rem;
+    left: 0.75rem;
+    transform: scale(1.15);
+  }
+
+  .sardar-img {
+    position: relative;
+  }
+  .education-img {
+    width: 10%;
+  }
 
 
-   <section id="education">
-     <h2>{educationContent.title}</h2>
-     <ul>
-       {educationContent.degrees.map((degree) => (
-         <li>
-           <strong>{degree.degree}</strong> - {degree.institution} ({degree.year})
-         </li>
-       ))}
-     </ul>
-     <SectionTitle text="hobbies" color="var(--light-purple-color)" hrefLink="#hobbies"/>
 
-   </section>
+   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
 
-   <style>
-    #education{
-      position: relative;
+    @media (max-width: 1024px) {
+    .education {
+      flex-direction: column;
     }
-   </style>
+  }
+
+  @media (max-width: 768px) {
+    .education-desc {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+    .education-desc h3 {
+      font-size: 1rem;
+    }
+    .education-desc-list {
+      font-size: 0.9rem;
+    }
+    .education-img {
+      width: 5%;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    .education-desc {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .education-desc h3 {
+      font-size: 0.8rem;
+    }
+    .education-desc-list {
+      font-size: 0.8rem;
+    }
+    .education-img {
+      width: 20%;
+    }
+  }
+</style>

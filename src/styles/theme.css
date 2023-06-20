@@ -30,6 +30,8 @@
 	--pink-color: #f77;
 	--purple-color: #100321;
 	--yellow-color: #eab308;
+	--main-font-family: sofia-pro, sans-serif;
+	--dark-blue-color: #172041;
 	--blue-color: rgb(31, 154, 255);
 	--second-orange-color: #f68013;
 	--second-reddish-orange-color: #ff3e00;
@@ -44,7 +46,7 @@
 
 .light-theme {
 	/* Light theme */
-	--background-color: #fffa;
+	--background-color: #2125;
 	--text-color: #12181b;
 	--icon-url: url("asset/imgs/sun.png");
 	--gif-icon-url: url("asset/gifs/sun.gif");

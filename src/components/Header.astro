@@ -8,15 +8,15 @@ import { header } from "../data/data.json";
 	<!-- <h1>{header.title}</h1> -->
 	<nav>
 		<a href="#about">About ME</a>
-		<a href="#skills">Skills</a>
-		<a href="#education">Education</a>
 		<a href="#work">Work Experience</a>
+		<a href="#skills">Skills</a>
 		<a href="#projects">Projects</a>
-		<a href="#hobbies">Hobbies</a>
+		<a href="#education">Education</a>
+		<!-- <a href="#hobbies">Hobbies</a> -->
 		<div class="theme-btn">
 			<!-- <img class="icon"  src="/asset/gifs/moon2.gif" alt="moon">
       <img class="icon"  src="/asset/gifs/sun.gif" alt="sun"> -->
-			<button id="theme-toggle"/>
+			<!-- <button id="theme-toggle"/> -->
 			<!-- <HoverReveal
 				text="Hover over me"
 				gifUrl="asset/gifs/moon.gif"
@@ -24,75 +24,172 @@ import { header } from "../data/data.json";
 			/> -->
 		</div>
 	</nav>
+	<ul class="hamberger-menu-btn">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </header>
 
 <style>
-  nav {
-	
-	background-color: transparent;
-	display: flex;
-	justify-content: flex-start;
-	gap: 1rem;
-	margin: 1rem;
-  position: relative;
-}
-
-a {
-	color: rgb(219 225 232 / var(--tw-text-opacity));
-  font-size: 1.25rem;
-  font-weight: 700;
-	text-decoration: none;
-	margin: 0 1rem;
-  padding:1rem;
-	transition: color 0.5s, transform 0.5s;
-}
-
-a:hover {
-	color: var(--orange-color);
-	transform: scale(1.07)
-}
-
-.theme-btn{
-  position: absolute;
-  right: 5rem;
-  top: 2%;
-}
-
-
-
-
-.icon,button{
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
-  
-}
-button{
-  width: 50px;
-  height: 50px;
-  background-image: var(--icon-url);
-  background-size: cover;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 1s;
-
-}
-button:hover{
-  /* transform: scale(1.1); */
-  background-image: var(--gif-icon-url) ;
-}
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
 	nav {
-		flex-direction: column;
-		align-items: center;
+		background-color: transparent;
+		justify-content: flex-start;
+		gap: 1rem;
+		margin: 1rem;
+		position: relative;
 	}
 
 	a {
-		margin: 5px 0;
+		color: rgb(219 225 232 / var(--tw-text-opacity));
+		font-size: 1.25rem;
+		font-weight: 700;
+		text-decoration: none;
+		margin: 0 1rem;
+		padding: 1rem;
+		transition: color 0.5s, transform 0.5s;
+	}
+
+	a:hover {
+		color: var(--orange-color);
+		transform: scale(1.07);
+	}
+
+	.theme-btn {
+		position: absolute;
+		right: 5rem;
+		top: 2%;
+	}
+
+	.icon,
+	button {
+		position: absolute;
+		width: 5rem;
+		height: 5rem;
+	}
+	#theme-toggle {
+		width: 50px;
+		height: 50px;
+		background-image: var(--icon-url);
+		background-size: cover;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		transition: transform 1s;
+	}
+	#theme-toggl:hover {
+		/* transform: scale(1.1); */
+		background-image: var(--gif-icon-url);
+	}
+	.hamberger-menu-btn {
+		display: none;
+	}
+   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
+	/* Responsive styles */
+	@media (max-width: 768px) {
+	
+		nav {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: black;
+			position: absolute;
+			to:0;
+			right: 0;
+			left: 0;
+			padding-top: 2.5rem;
+			z-index: 1;
+			margin: 0;
+			animation: disappear-menu 1s ease forwards;
+			overflow: hidden;
+		}
+
+		a {
+			margin: 5px 0;
+		}
+	
+
+	
+	.hamberger-menu-btn {
+		all: unset;
+		position: absolute;
+		right: .5rem;
+		top:1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		height: 2.5rem;
+		width: 2.5rem;
+		z-index: 1000;
+		list-style-type: none;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.hamberger-menu-btn li {
+		width: 100%;
+		height: .2rem;
+		background-color: var(--orange-color);
+		border-radius: 1rem;
+		transition: all .3s ease;
+	}
+	.clicked-hamberger-menu li:nth-child(2){
+		transform: translateX(1000px);
+		
+	}
+	.clicked-hamberger-menu li:first-child{
+		transform: rotate(-45deg) translateY(.25rem) translateX(-1rem);
+		transition-delay: .1s;
+	}
+	.clicked-hamberger-menu li:last-child{
+		transform: rotate(45deg) translateY(-.3rem) translateX(-1rem) ;
+		transition-delay: .1s;
+
+	}
+
+	.show-menu {
+		animation: show-menu 1s ease forwards;
+	}
+	}
+
+@keyframes disappear-menu {
+	from{
+		width: 100%;
+		opacity: 1;
+	}
+	50%{
+		opacity:0;
+	}
+	100%{
+		width: 0;
+		opacity:0;
+
 	}
 }
+@keyframes show-menu {
+	0%{
+		opacity: 0;
+		width: 0;
+	}
+	30%{
+		opacity: 0;
+	}
+	100%{
+		width: 100%;
+		opacity:1;
+		
+	}
+
+}
+
+}
 </style>
+<script>
+	const hButton = document.querySelector(".hamberger-menu-btn");
+	const menu = document.querySelector("nav");
+	console.log(menu);
+	hButton.addEventListener("click", () => {
+		menu.classList.toggle("show-menu");
+		hButton.classList.toggle("clicked-hamberger-menu")
+	});
+</script>

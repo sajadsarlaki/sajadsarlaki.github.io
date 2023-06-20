@@ -49,18 +49,21 @@ import SectionTitle from "./SectionTitle.astro";
   }
   .project-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin: 0 10%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+    margin: 0;
+    padding: 5%;
   }
   a{
-    text-decoration: none;
+    all: unset;
+
+  
   }
   .project-item {
     display: flex;
     flex-direction: column;
     min-height: 50vh;
-    width: 95%;
+    width: 100%;
     border-radius: 0.75rem;
     overflow: hidden;
     transition:.8s .1s ease transform;
@@ -85,8 +88,6 @@ import SectionTitle from "./SectionTitle.astro";
     justify-content: flex-start;
     gap: 1rem;
     border-radius: 0 0 .5rem .5rem ;
-
-
   }
   .title {
     font-family: var(--second-font-family);
@@ -242,11 +243,73 @@ import SectionTitle from "./SectionTitle.astro";
     color: #fff;
   }
   .keyword[data-keyword-index="4"]{
-    background-color: var(--second-blue-color);
+    background-color: var(--orange-color);
   }
   .keyword[data-keyword-index="4"]:nth-child(2){
     filter: brightness(75%);
     background-color: var(--purple-color);
     color: #fff;
   }
+  /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
+/* ... existing styles ... */
+
+/* Responsive styles */
+
+/* ... existing styles ... */
+
+/* Responsive styles */
+@media (max-width: 320px) {
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1%;
+  }
+
+  .project-item {
+    min-height: 40vh;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-sub-description {
+    font-size: 0.8rem;
+  }
+
+  .kewords li {
+    font-size: 0.6rem;
+  }
+}
+
+/* ... other media queries and styles ... */
+
+@media (max-width: 576px) {
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 10%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 3%;
+  }
+}
+@media  (min-width: 1367px) {
+  .project-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 3%;
+  }
+}
+/* ... existing styles ... */
+
 </style>

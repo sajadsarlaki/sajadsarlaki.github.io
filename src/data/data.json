@@ -90,14 +90,11 @@
 		"title": "Education",
 		"degrees": [
 			{
-				"degree": "Bachelor of Science in Computer Science",
+				"degree": "B.Sc in Computer Engineering",
 				"institution": "Amirkabir University of Technology",
-				"year": "2015-2019"
-			},
-			{
-				"degree": "High School Diploma in Mathematics and Physics",
-				"institution": "National Organization for Development of Exceptional Talents",
-				"year": "2011-2015"
+				"description":["GPA: 3.52/4.0 (17/20)","last two years: 3.9/4 (18.86/20)"],
+				"year": "2017-2022",
+				"imgs":{"sardar":"/asset/imgs/sardar.png","graduation":"/asset/imgs/graduation.png", "amirkaboir_icon":"/asset/imgs/amirkabir.png"}
 			}
 		]
 	},
@@ -147,18 +144,26 @@
 			{
 				"title": "Aragorn‑js",
 				"description": "a JavaScript library for creative coding!",
-				"sub_description":["It is JS lib for creative coding, making 2D educational content with webGl."],
+				"sub_description": [
+					"It is JS lib for creative coding, making 2D educational content with webGl."
+				],
 				"keywords": ["Final project", "Nodejs", "webGL"],
 				"links": {
 					"presentation": "https://prezi.com/view/Y5Q5deoPJhgeVzXI1N76/",
 					"github": "https://github.com/sajadsarlaki/Aragorn"
 				},
-				"imgs": ["/asset/imgs/aragorn.png", "/asset/imgs/heart.png", "/asset/imgs/webgl.png"]
+				"imgs": [
+					"/asset/imgs/aragorn.png",
+					"/asset/imgs/heart.png",
+					"/asset/imgs/webgl.png"
+				]
 			},
 			{
 				"title": "VM‑Managment",
 				"description": "Virtualbox-driven tool for managing virtual machines!",
-				"sub_description": ["Virtual Box based tool: login, CRUD VMs, file ops, command execution via REST API."],
+				"sub_description": [
+					"Virtual Box based tool: login, CRUD VMs, file ops, command execution via REST API."
+				],
 				"keywords": ["Nodejs", "Virtual_box"],
 				"links": { "github": "https://github.com/sajadsarlaki/vmManagment" },
 				"imgs": ["/asset/imgs/vm.png"]
@@ -190,15 +195,16 @@
 				"keywords": ["DM", "Python", "Jupyter"],
 				"links": { "github": "https://github.com/sajadsarlaki/DataMining" },
 				"imgs": ["/asset/imgs/DM.png"]
-			},{
+			},
+			{
 				"title": "Personal web-page",
 				"description": "Personal webpage!",
 				"sub_description": [
-					"Personal web-page implemented using Astro js!"
+					"Currently, it's the very page you're viewing:) A personal web-page created utilizing Astro js!"
 				],
-				"keywords": ["Portfolio","Astrojs", "css"],
+				"keywords": ["Portfolio", "Astrojs", "css"],
 				"links": { "github": "https://github.com/sajadsarlaki/DataMining" },
-				"imgs": ["/asset/imgs/sajad.png","/asset/imgs/astro.png"]
+				"imgs": ["/asset/imgs/sajad.png", "/asset/imgs/astro.png"]
 			}
 		]
 	},

@@ -1,23 +1,23 @@
 ---
-const { text, color, hrefLink, beckon = true } = Astro.props;
+const { text, color, hrefLink, beckon = true, position="center" } = Astro.props;
 ---
 
 <a href={hrefLink}
-    ><h2 style={`background-color:${color}`}>
+    ><h2 style={`background-color:${color}`}   class={position}>
         {text}
+{beckon ? (<span class="beckon text-5xl block"> 👇</span>):""}
+
     </h2>
 </a>
-{beckon ? (<span class="beckon text-5xl block"> 👇</span>):""}
 <style>
-    h2,
-    .beckon {
+
+    h2{
         position: absolute;
-        bottom: 3%;
-        left: 50%;
-        transform: translate(-50%, 0);
+        bottom: 6%;
+        
     }
     h2 {
-        font-size: 3.75rem;
+        font-size: 2.75rem;
         padding: 0.5rem 1.5rem;
         color: var(--background-color);
 
@@ -27,14 +27,46 @@ const { text, color, hrefLink, beckon = true } = Astro.props;
         font-weight: 100;
     }
     .beckon {
-        font-size: 2.75rem;
+        position: absolute;
+        font-size: 1.75rem;
         animation: beckon-animation 1s cubic-bezier(0.8, 0, 1, 1) alternate
             infinite;
-        bottom: 0;
+        bottom: -70%;
+        left: 50%;
+        
+
     }
     @keyframes beckon-animation {
         to {
-            transform: translate(-50%, 0) translateY(-25%);
+            transform: translateY(-25%);
         }
     }
+
+    .center{
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .right{
+        right: 5%;
+    }
+    .left{
+        left: 5%;
+    }
+      @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .beckon {
+      font-size: 1.25rem;
+      bottom: -60%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    a{
+        display: none;
+    }
+  }
 </style>
