@@ -6,44 +6,47 @@ import Education from "../components/Education.astro";
 import WorkExperience from "../components/WorkExperience.astro";
 import Projects from "../components/Projects.astro";
 import Hobbies from "../components/Hobbies.astro";
-import '../styles/global.css'
+import "../styles/global.css";
 ---
+
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sajad Sarlaki</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sajad Sarlaki</title>
-</head>
-
-<body>
-  <Header />
-  <main>
-    <About />
-    <WorkExperience />
-    <Skills />
-    <Projects />
-    <Education  />
-    <!-- <Hobbies  /> -->
-  </main>
-</body>
-
+  <body>
+    <Header />
+    <main>
+      <About />
+      <WorkExperience class="hidden" />
+      <Skills class="hidden" />
+      <Projects class="hidden" />
+      <Education class="hidden" />
+      <!-- <Hobbies  /> -->
+    </main>
+  </body>
 </html>
 
-   <script>
-     const themeToggle = document.getElementById('theme-toggle');
-     themeToggle.addEventListener('click', () => {
-       document.body.classList.toggle('light-theme');
-       const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-       localStorage.setItem('theme', theme);
-     });
+<!-- <script>
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    const theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+    localStorage.setItem("theme", theme);
+  });
 
-     // Load the saved theme from localStorage
-     document.addEventListener('DOMContentLoaded', () => {
-       const savedTheme = localStorage.getItem('theme');
-       if (savedTheme === 'light') {
-         document.body.classList.add('light-theme');
-       }
-     });
-   </script>
+  // Load the saved theme from localStorage
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+    }
+  });
+</script> -->
+
+

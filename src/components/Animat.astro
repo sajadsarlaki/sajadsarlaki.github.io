@@ -1,0 +1,73 @@
+
+---
+const {delay, class:className} = Astro.props;
+---
+<span class={`hidden d-${delay} ${className}`} >
+    <slot  />
+</span>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+        });
+    });
+
+    const hiddens = document.querySelectorAll(".hidden");
+    hiddens.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+    .hidden {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100px);
+        transition: all 2s;
+    }
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    .d-100 {
+        transition-delay: 100ms;
+    }
+    .d-200 {
+        transition-delay: 200ms;
+    }
+    .d-300 {
+        transition-delay: 300ms;
+    }
+    .d-400 {
+        transition-delay: 400ms;
+    }
+    .d-500 {
+        transition-delay: 500ms;
+    }
+    .d-600 {
+        transition-delay: 600ms;
+    }
+    .d-700 {
+        transition-delay: 700ms;
+    }
+    .d-800 {
+        transition-delay: 800ms;
+    }
+    .d-900 {
+        transition-delay: 900ms;
+    }
+    .d-1 {
+        transition-delay: 1s;
+    }
+
+    @media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }
+</style>

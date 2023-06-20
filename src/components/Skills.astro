@@ -1,13 +1,15 @@
 ---
 import { skillsContent } from "../data/data.json";
 import SectionTitle from "./SectionTitle.astro";
+import Animat from "./Animat.astro";
 ---
 
 <section id="skills">
   <ul class="main-skill-list">
     {
-      skillsContent.skills.map((skill) => (
-        <li class="main-skill-item">
+      skillsContent.skills.map((skill, index) => (
+        <Animat  class="main-skill-item" delay={index + "00"}>
+        <li>
           <img class="icon" src={skill.icon} alt="" />
           <h3 class="title">{skill.title}</h3>
           <ul>
@@ -16,6 +18,7 @@ import SectionTitle from "./SectionTitle.astro";
             ))}
           </ul>
         </li>
+        </Animat>
       ))
     }
   </ul>

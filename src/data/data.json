@@ -29,7 +29,7 @@
 			},
 			{
 				"name": "email",
-				"link": "sajad.sarlaki1999@gmail.com",
+				"link": "mailto:sajad.sarlaki1999@gmail.com?subject = Feedback&body = Message",
 				"icon": "/asset/imgs/gmail.png",
 				"animatedIcon": "/asset/gifs/gmail.gif"
 			}

@@ -1,15 +1,17 @@
 ---
 import { educationContent } from "../data/data.json";
+import Animat from "./Animat.astro";
 import SectionTitle from "./SectionTitle.astro";
 ---
 
 <section id="education">
   {
-    educationContent.degrees.map((degree) => (
+    educationContent.degrees.map((degree, index) => (
       <div class="education">
-        <div class="education-desc">
+        <Animat class="education-desc">
+        <div>
           <img class="education-img" src={degree.imgs.amirkaboir_icon} alt="" />
-          <h2 class="title">{degree.degree}</h2>
+            <h2 class="title">{degree.degree}</h2>
           <h3>
             {degree.institution} {degree.year}
           </h3>
@@ -19,10 +21,13 @@ import SectionTitle from "./SectionTitle.astro";
             ))}
           </ul>
         </div>
-        <div class="graduation-imgs">
+        </Animat>
+        <Animat class="graduation-imgs" delay="200">
+        <div >
           <img src={degree.imgs.graduation} alt="" class="grad" />
           <img src={degree.imgs.sardar} alt="" class="sardar" />
         </div>
+        </Animat>
       </div>
     ))
   }
@@ -33,7 +38,6 @@ import SectionTitle from "./SectionTitle.astro";
     hrefLink="#hobbies"
   /> -->
 </section>
-
 <style>
   #education {
     position: relative;
@@ -68,13 +72,13 @@ import SectionTitle from "./SectionTitle.astro";
     line-height: 1.5rem;
   }
   .graduation-imgs {
-    position:relative
+    position: relative;
   }
-  .graduation-imgs{
+  .graduation-imgs {
     transform: scale(1);
   }
 
-  .grad{
+  .grad {
     position: absolute;
     top: -3rem;
     left: 0.75rem;
@@ -88,11 +92,9 @@ import SectionTitle from "./SectionTitle.astro";
     width: 10%;
   }
 
+  /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
 
-
-   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
-
-    @media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     .education {
       flex-direction: column;
     }
@@ -113,7 +115,6 @@ import SectionTitle from "./SectionTitle.astro";
       width: 5%;
     }
   }
-
 
   @media (max-width: 480px) {
     .education-desc {

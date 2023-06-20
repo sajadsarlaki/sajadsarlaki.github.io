@@ -176,7 +176,6 @@ import SectionTitle from "./SectionTitle.astro";
 <script>
   const social = document.querySelector(".social-media");
   social.querySelectorAll("a").forEach((element) => {
-    console.log(element);
     element.addEventListener("mouseenter", (e) => {
       let image = element.getAttribute("data-animated-icon");
       element.style.backgroundImage = `url('${image}')`

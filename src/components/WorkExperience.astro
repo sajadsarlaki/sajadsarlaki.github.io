@@ -1,25 +1,29 @@
 ---
 import { workExperienceContent } from "../data/data.json";
 import SectionTitle from "./SectionTitle.astro";
+import Animate from "./Animat.astro"
 ---
 
 <section id="work">
   <!-- <h2>{workExperienceContent.title}</h2> -->
   <ul class="list-container">
+
     {
-      workExperienceContent.jobs.map((job) => (
+      workExperienceContent.jobs.map((job, index) => {return(
+        <Animate delay={2*index+'00'} class="work-item">
         <li>
-          <img class="job-icon" src={job.icon} alt="" />
-          <h2>{job.position}</h2>
-          <strong>{job.company} </strong>({job.year})
-          <br />
-          <ul class="desc-list">
-            {job.desc.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </li>
-      ))
+            <img class="job-icon" src={job.icon} alt="" />
+              <h2>{job.position}</h2>
+              <strong>{job.company} </strong>({job.year})
+              <br />
+              <ul class="desc-list">
+                {job.desc.map((item) => (
+                  <li class="desc-item">{item}</li>
+                  ))}
+                  </ul>
+                  </li>
+      </Animate>
+   ) })
     }
   </ul>
   <SectionTitle text="Skills" color="var(--orange-color)" hrefLink="#skills" />
@@ -33,7 +37,6 @@ import SectionTitle from "./SectionTitle.astro";
     align-items: center;
     justify-content: center;
     margin: auto;
-
   }
   .list-container {
     all: unset;
@@ -42,10 +45,8 @@ import SectionTitle from "./SectionTitle.astro";
     justify-content: space-around;
     max-width: 92%;
   }
-  // .list-container>li:nth-child(2n) {
-  //   margin-top: 20%;
-  // }
-  .list-container > li {
+  
+  .work-item{
     display: flex;
     flex-direction: column;
     min-height: 25vh;
@@ -74,47 +75,47 @@ import SectionTitle from "./SectionTitle.astro";
     line-height: 1.7rem;
     font-size: 1.1rem;
   }
-   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
-   /* ... existing styles ... */
+  /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
+  /* ... existing styles ... */
 
-/* Responsive styles */
-@media (max-width: 576px) {
-  .list-container {
-    flex-direction: column;
-    align-items: center;
+  /* Responsive styles */
+  @media (max-width: 576px) {
+    .list-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .work-item {
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+    .title {
+      font-size: 3rem;
+    }
   }
 
-  .list-container > li {
-    width: 70%;
-    margin-bottom: 2rem;
-  }
-  .title{
-    font-size: 3rem;
-  }
-}
+  @media (min-width: 577px) and (max-width: 768px) {
+    .list-container {
+      flex-wrap: wrap;
+    }
 
-@media (min-width: 577px) and (max-width: 768px) {
-  .list-container {
-    flex-wrap: wrap;
+    .work-item {
+      width: 60%;
+      margin-bottom: 2rem;
+    }
   }
 
-  .list-container > li {
-    width: 60%;
-    margin-bottom: 2rem;
+  @media (min-width: 769px) and (max-width: 992px) {
+    .list-container {
+      flex-wrap: wrap;
+    }
+
+    .work-item {
+      width: 32%;
+      margin-bottom: 2rem;
+    }
   }
-}
 
-@media (min-width: 769px) and (max-width: 992px) {
-  .list-container {
-    flex-wrap: wrap;
-  }
+  /* ... existing styles ... */
+</style>
 
-  .list-container > li {
-    width: 32%;
-    margin-bottom: 2rem;
-  }
-}
-
-/* ... existing styles ... */
-
-  </style>
