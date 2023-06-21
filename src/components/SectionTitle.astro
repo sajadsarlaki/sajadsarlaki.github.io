@@ -6,7 +6,7 @@ const {
     beckon = true,
     position = "center",
 } = Astro.props;
-const { class: className } = Astro.props;
+const className = Astro.props.class;
 ---
 
 <a href={hrefLink}

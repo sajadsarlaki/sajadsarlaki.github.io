@@ -2,7 +2,7 @@
 import { projectsContent } from "../data/data.json";
 import Animat from "./Animat.astro";
 import SectionTitle from "./SectionTitle.astro";
-const {class:className } = Astro.props;
+const className = Astro.props.class;
 
 ---
 
@@ -85,6 +85,7 @@ const {class:className } = Astro.props;
     overflow: hidden;
     position: relative;
     perspective: 1000px;
+    padding-bottom: 2rem;
   }
   .lower-card {
     min-height: 25vh;
@@ -166,7 +167,7 @@ const {class:className } = Astro.props;
   }
   .project-img[data-img-index="3"] {
     filter: brightness(100%);
-    width: 85%;
+    width: 80%;
     position: absolute;
     left: 5%;
     top: 10%;
@@ -174,17 +175,17 @@ const {class:className } = Astro.props;
   }  
   .project-img[data-img-index="4"]{
     filter: brightness(100%);
-    width: 45%;
+    width: 40%;
     position: absolute;
     right: 0%;
     top: 5%;
   } 
    .project-img[data-img-index="4"]:last-child{
     filter: brightness(100%);
-    width: 50%;
+    width: 40%;
     position: absolute;
     right: 45%;
-    top: 25%;
+    top: 30%;
 
   }
   .project-description {
@@ -211,8 +212,10 @@ const {class:className } = Astro.props;
     bottom: 0;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    justify-content: flex-start;
+    gap: 1rem;
     list-style-type: none;
+    padding-left: 1rem;
   
   }
   .kewords li{
@@ -290,6 +293,9 @@ const {class:className } = Astro.props;
   .kewords li {
     font-size: 0.6rem;
   }
+  .keywords{
+      gap: 0;
+  }
 }
 
 /* ... other media queries and styles ... */
@@ -300,6 +306,10 @@ const {class:className } = Astro.props;
     gap: 2rem;
     padding: 10%;
   }
+  .keywords{
+      gap: 0;
+  }
+  
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -308,6 +318,10 @@ const {class:className } = Astro.props;
     gap: 2rem;
     padding: 3%;
   }
+  .keywords{
+      gap: 0;
+  }
+
 }
 @media  (min-width: 1367px) {
   .project-list {

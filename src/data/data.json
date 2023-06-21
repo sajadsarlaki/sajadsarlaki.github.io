@@ -106,8 +106,8 @@
 				"company": "Bayan",
 				"year": "2022-Present",
 				"desc": [
-					"Developed front-end mail service applications",
-					"Worked with mail service modules (mail server, postfix, protocols, tools, libs)",
+					"Developed a mailbox app(React)",
+					"Worked with mail service modules",
 					"Designed web pages and applications"
 				],
 				"icon": "/asset/imgs/bayan.png"
@@ -117,10 +117,10 @@
 				"company": "Utopia",
 				"year": "2018-2022",
 				"desc": [
-					"Assisted in agricultural platform design and implementation",
-					"Developed mobile app with React Native",
-					"Developed web apps with React js",
-					"Trained interns in React and React hook"
+					"Contributed to platform design and implementation.",
+					"Developed mobile apps (React Native)",
+					"Developed web apps (React)",
+					"Trained interns in front-end dev (React)"
 				],
 				"icon": "/asset/imgs/utopia.png"
 			},
@@ -129,10 +129,10 @@
 				"company": "Amirkabir University of Technology",
 				"year": "2018-2020",
 				"desc": [
-					"Teaching Assistant for Advanced Programming",
-					"Teaching Assistant for Signals and Systems",
-					"Teaching Assistant for Computational AI",
-					"Designed, graded assignments, and assisted students with problems"
+					"TA for Advanced Programming",
+					"TA for Signals and Systems",
+					"TA for Computational AI",
+					"Developed, scored tasks, aided students with issues"
 				],
 				"icon": "/asset/imgs/amirkabir.png"
 			}

@@ -1,5 +1,6 @@
 ---
-const { class: className, animationName, duration, delay } = Astro.props;
+const className = Astro.props.class;
+const {animationName, duration, delay } = Astro.props;
 ---
 
 <span
@@ -85,7 +86,7 @@ const { class: className, animationName, duration, delay } = Astro.props;
     @keyframes fadeInFromRight {
         from {
             opacity: 0;
-            filter: blur(5px);
+            filter: blur(3px);
             transform: translateX(200px);
         }
         to {
@@ -100,24 +101,24 @@ const { class: className, animationName, duration, delay } = Astro.props;
     }
     @keyframes fadeInWobbling {
         0% {
-            opacity: 0;
+            opacity: 0.1;
             filter: blur(5px);
-            transform: scale(0) ;
+            transform: translateY(200px);
+
         }
         25% {
             opacity: .1;
             filter: blur(5px);
-            transform: scale(.1) translateY(-200px);
+            transform: translateY(200px);
         }
         50% {
             opacity: .3;
             filter: blur(5px);
-            transform: scale(.4)translateY(-50px);
+            transform: translateY(50px);
         }
         100% {
             opacity: 1;
             filter: blur(0);
-            transform: scale(1);
         }
     }
 
@@ -206,4 +207,14 @@ const { class: className, animationName, duration, delay } = Astro.props;
             transition: none;
         }
     }
+    @media (max-width: 768px) {
+  .fadeIn-from-bottom,
+  .fadeIn-from-top,
+  .fadeIn-from-left,
+  .fadeIn-from-right,
+  .fadeIn-appearance {
+    filter: blur(0) !important;
+  }
+}
+
 </style>

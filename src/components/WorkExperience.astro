@@ -73,8 +73,17 @@ import Animate from "./Animat.astro"
   }
 
   .desc-list {
-    line-height: 1.7rem;
-    font-size: 1.1rem;
+    padding: 0;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding-left: 2ch;
+  }
+  .desc-list li{
+    margin-bottom: .5rem;
+  }
+  .desc-list li::marker{
+    content: '▸ ';
+    color: var(--orange-color)
   }
   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
   /* ... existing styles ... */
@@ -89,6 +98,10 @@ import Animate from "./Animat.astro"
     .work-item {
       width: 70%;
       margin-bottom: 2rem;
+    }
+    .work-item h2{
+      font-size: 1.7rem;
+      margin-right: 1rem;
     }
     .title {
       font-size: 3rem;
