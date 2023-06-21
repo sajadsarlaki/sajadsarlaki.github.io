@@ -41,7 +41,7 @@ import Animat from "./Animat.astro";
     </div>
   </div>
   
-  <Animat class="picture" dalay="1000" duration="3000"  animationName="fadeIn-appearance">
+  <Animat class="picture" dalay="500" duration="2000"  animationName="fadeIn-appearance">
   <div >
     <img  src="asset/imgs/sajad.png" alt="" class="image" />
   </div>
@@ -116,7 +116,7 @@ import Animat from "./Animat.astro";
     height: 45rem;
     position: absolute;
     z-index: -1;
-    top: 15%;
+    bottom: -15%;
     left: 50%;
     transform: rotate(90deg) rotateY(80deg);
     transform-style: preserve-3d;
@@ -150,19 +150,16 @@ import Animat from "./Animat.astro";
 .picture {
   align-self:center;
   margin-top: 0;
-  margin: 0;red;
+  margin: 0;
 }
 .picture img{
   padding: 0;
   margin: 0;
   transform: scale(.7);
 }
+
   .portal {
-    width: 150px;
-    top: 22%;
-    left: 15%;
-    position: absolute;
-    transform: rotate(90deg) rotateY(50deg);
+    display: none;
   }
 }
 

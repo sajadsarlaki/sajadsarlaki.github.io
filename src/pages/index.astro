@@ -7,6 +7,7 @@ import WorkExperience from "../components/WorkExperience.astro";
 import Projects from "../components/Projects.astro";
 import Hobbies from "../components/Hobbies.astro";
 import "../styles/global.css";
+import { SEO } from "astro-seo";
 ---
 
 <!DOCTYPE html>
@@ -14,23 +15,61 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sajad Sarlaki</title>
+    <SEO
+      title="Sajad Sarlaki"
+      description="I made my personal website with Astro! No external libraries, just CSS for all the styling."
+      openGraph={{
+        basic: {
+          title: "Sajad Sarlaki",
+          type: "website",
+          image: "/asset/imgs/twitter-preview.png",
+        },
+      }}
+      twitter={{
+        creator: "@Sajadsarlaki_",
+      }}
+      extend={{
+        link: [
+          { rel: "icon", href: "/asset/imgs/favicon.ico" },
+          {
+            rel: "apple-touch-icon",
+            sizes: "180x180",
+            href: "/asset/imgs/apple-touch-icon.png",
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: "/asset/imgs/favicon-32x32.png",
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: "/asset/imgs/favicon-16x16.png",
+          },
+          { rel: "manifest", href: "/asset/imgs/site.webmanifest" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          { name: "msapplication-TileColor", content: "#da532c" },
+          { name: "theme-color", content: "#ffffff" },
+        ],
+      }}
+    />
   </head>
 
   <body>
     <Header />
     <main>
       <About />
-      <WorkExperience  />
-      <Skills  />
-      <Projects  />
-      <Education  />
+      <WorkExperience />
+      <Skills />
+      <Projects />
+      <Education />
       <!-- <Hobbies  /> -->
     </main>
-  </body>
-</html>
-
-<!-- <script>
+  </body><!-- <script>
   const themeToggle = document.getElementById("theme-toggle");
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
@@ -48,5 +87,4 @@ import "../styles/global.css";
     }
   });
 </script> -->
-
-
+</html>
