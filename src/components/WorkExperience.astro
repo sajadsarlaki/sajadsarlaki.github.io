@@ -10,7 +10,7 @@ import Animate from "./Animat.astro"
 
     {
       workExperienceContent.jobs.map((job, index) => {return(
-        <Animate delay={2*index+'00'} class="work-item">
+        <Animate delay={2*index+'00'} class="work-item" animationName="fadeIn-from-left">
         <li>
             <img class="job-icon" src={job.icon} alt="" />
               <h2>{job.position}</h2>
@@ -44,6 +44,7 @@ import Animate from "./Animat.astro"
     display: flex;
     justify-content: space-around;
     max-width: 92%;
+    list-style-type: none;
   }
   
   .work-item{

@@ -92,7 +92,8 @@ import { header } from "../data/data.json";
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			background-color: black;
+			background-image: radial-gradient(transparent, var(--background-color) 1px) ;
+			background-size: 2rem 2rem;
 			position: absolute;
 			to:0;
 			right: 0;
@@ -101,11 +102,14 @@ import { header } from "../data/data.json";
 			z-index: 1;
 			margin: 0;
 			animation: disappear-menu 1s ease forwards;
+			/* border:1px solid var(--orange-color); */
 			overflow: hidden;
+
 		}
 
 		a {
 			margin: 5px 0;
+			border-bottom: 1px solid var(--orange-color);
 		}
 	
 

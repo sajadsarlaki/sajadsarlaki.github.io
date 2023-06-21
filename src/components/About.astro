@@ -2,6 +2,7 @@
 import { about } from "../data/data.json";
 import HoverReveal from "./HoverReveal.astro";
 import SectionTitle from "./SectionTitle.astro";
+import Animat from "./Animat.astro";
 ---
 
 <section id="about">
@@ -39,17 +40,23 @@ import SectionTitle from "./SectionTitle.astro";
       }
     </div>
   </div>
-  <div class="picture">
-    <img class="image" src="asset/imgs/sajad.png" alt="" />
+  
+  <Animat class="picture" dalay="1000" duration="3000"  animationName="fadeIn-appearance">
+  <div >
+    <img  src="asset/imgs/sajad.png" alt="" class="image" />
   </div>
-  <img src="asset/gifs/portal.gif" alt="" class="portal" />
+</Animat>
+  <Animat class="portal" duration="1000" animationName="fadeIn-from-bottom">
+  <img src="asset/gifs/portal.gif" alt="" class="portal"  />
+  </Animat>
+
   <SectionTitle
     text="Work Experience"
     color="var(--reddish-orange-color)"
     hrefLink="#work"
     beckon="true"
+    position="left"
   />
-
 </section>
 
 <style>
@@ -62,6 +69,8 @@ import SectionTitle from "./SectionTitle.astro";
     gap: 10%;
     min-height: 90vh;
     margin-left: 2rem;
+    overflow: hidden ;
+
   }
   .social-media {
     display: flex;
@@ -104,12 +113,12 @@ import SectionTitle from "./SectionTitle.astro";
     padding: 5rem;
   }
   .portal {
-    height: 700px;
+    height: 45rem;
     position: absolute;
     z-index: -1;
-    top: -5%;
-    right: -5%;
-    transform: rotateY(55deg);
+    top: 15%;
+    left: 50%;
+    transform: rotate(90deg) rotateY(80deg);
     transform-style: preserve-3d;
   }
   .title {
@@ -146,9 +155,14 @@ import SectionTitle from "./SectionTitle.astro";
 .picture img{
   padding: 0;
   margin: 0;
+  transform: scale(.7);
 }
   .portal {
-    display: none;
+    width: 150px;
+    top: 22%;
+    left: 15%;
+    position: absolute;
+    transform: rotate(90deg) rotateY(50deg);
   }
 }
 
@@ -167,10 +181,33 @@ import SectionTitle from "./SectionTitle.astro";
 }
 
 /* Laptops and desktops */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   /* Add styles for laptops and desktops here */
+  .name{
+    line-height: 3rem;
+  }
+  .picture{
+    right: -3rem
+  }
+  .portal{
+    width: 500px;
+    left: 35%;
+  }
 }
-
+@media (max-width: 320px) {
+  /* Add styles for laptops and desktops here */
+  .name{
+    line-height: 3rem;
+  }
+  .picture{
+    right: -3rem;
+    transform: scale(.5)
+  }
+  .portal{
+    width: 50px;
+    left: 35%;
+  }
+}
 
 </style>
 <script>

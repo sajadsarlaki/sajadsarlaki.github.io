@@ -10,7 +10,7 @@ const {class:className } = Astro.props;
   <ul class="project-list">
     {
       projectsContent.projects.map((project, index) => (
-        <Animat  class="main-skill-item" delay={3*index + "00"}>
+        <Animat  class="main-skill-item" delay={3*index + "00"} animationName="fadeIn-from-bottom">
 
         <a href={project.links.github} target="_blank"><li   class="project-item">
           <div class="upper-card">
