@@ -55,14 +55,13 @@ const className = Astro.props.class;
   }
   .project-list {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem;
     margin: 0;
     padding: 5%;
   }
   a{
     all: unset;
-
+    cursor: pointer;
   
   }
   .project-item {
@@ -119,6 +118,8 @@ const className = Astro.props.class;
   }
   .title[data-index="4"] {
     color: var(--orange-color);
+  }.title[data-index="5"] {
+    color: var(--light-purple-color);
   }
 
   .project-img[data-img-index="0"] {
@@ -187,6 +188,23 @@ const className = Astro.props.class;
     right: 45%;
     top: 30%;
 
+  }  
+  .project-img[data-img-index="5"]{
+    filter: brightness(100%);
+    width: 90%;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    right: 5%;
+  } 
+   .project-img[data-img-index="5"]:last-child{
+    filter: brightness(150%);
+    width: 50%;
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    bottom: -15%;
+
   }
   .project-description {
     font-family: var(--second-font-family);
@@ -213,6 +231,7 @@ const className = Astro.props.class;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     gap: 1rem;
     list-style-type: none;
     padding-left: 1rem;
@@ -220,13 +239,15 @@ const className = Astro.props.class;
   }
   .kewords li{
     all:unset;
-    padding: .35rem .5rem;
+    padding: .5rem .5rem .35rem .5rem;
     background-color: var(--second-yellow-color);
     border-radius: .45rem;
     color: #12181a;
     font-weight: 500;
     font-size: .75rem;
     margin-bottom: 1rem;
+ 
+
     /* filter: brightness(80%); */
   }
   .keyword[data-keyword-index="0"]{
@@ -259,12 +280,14 @@ const className = Astro.props.class;
     background-color: var(--purple-color);
     color: #fff;
   }
+    .keyword[data-keyword-index="5"]:nth-child(2){
+    filter: brightness(75%);
+    background-color: var(--light-purple-color);
+    color: #000;
+  }
   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
-/* ... existing styles ... */
 
-/* Responsive styles */
 
-/* ... existing styles ... */
 
 /* Responsive styles */
 @media (max-width: 320px) {
@@ -300,7 +323,7 @@ const className = Astro.props.class;
 
 /* ... other media queries and styles ... */
 
-@media (max-width: 576px) {
+@media (minb-width: 576px) {
   .project-list {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -312,7 +335,7 @@ const className = Astro.props.class;
   
 }
 
-@media (min-width: 577px) and (max-width: 768px) {
+@media  (min-width: 768px) {
   .project-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
@@ -323,6 +346,72 @@ const className = Astro.props.class;
   }
 
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 3%;
+  }
+  .keywords{
+      gap: 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .project-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 3%;
+  }
+
+  .project-item {
+    min-height: 45vh;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+  }
+
+  .project-sub-description {
+    font-size: 0.9rem;
+  }
+
+  .kewords li {
+    font-size: 0.7rem;
+  }
+}
+
+/* Large laptop styles */
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .project-list {
+    grid-template-columns: repeat(4,  1fr);
+    gap: 2rem;
+    padding: 3%;
+  }
+
+  .project-item {
+    min-height: 50vh;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1.25rem;
+  }
+
+  .project-sub-description {
+    font-size: 1rem;
+  }
+
+  .kewords li {
+    font-size: 0.75rem;
+  }
+}
 @media  (min-width: 1367px) {
   .project-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -330,6 +419,35 @@ const className = Astro.props.class;
     padding: 3%;
   }
 }
-/* ... existing styles ... */
+/* ... landscape ... */
+
+
+/* ... other media queries and styles ... */
+/* Laptop */
+@media  (max-width: 1024px) and (orientation: landscape) {
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 3%;
+  }
+
+.project-list h2{
+    font-size: .8rem;
+
+}
+  .upper-card{
+    /* padding-top: 0; */
+    padding-bottom:7rem;
+  }
+  .upper-card img{
+    transform: scale(1);
+    bottom: 0%;
+    top: 50%;
+  }
+  .keywords{
+      gap: 0;
+  }
+
+}
 
 </style>

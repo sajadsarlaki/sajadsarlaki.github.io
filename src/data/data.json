@@ -147,7 +147,7 @@
 				"sub_description": [
 					"It is JS lib for creative coding, making 2D educational content with webGl."
 				],
-				"keywords": ["Final project", "Nodejs", "webGL"],
+				"keywords": ["Final project", "webGL"],
 				"links": {
 					"presentation": "https://prezi.com/view/Y5Q5deoPJhgeVzXI1N76/",
 					"github": "https://github.com/sajadsarlaki/Aragorn"
@@ -203,8 +203,18 @@
 					"Currently, it's the very page you're viewing:) A personal web-page created utilizing Astro js!"
 				],
 				"keywords": ["Portfolio", "Astrojs", "css"],
-				"links": { "github": "https://github.com/sajadsarlaki/DataMining" },
+				"links": { "github": "https://github.com/sajadsarlaki/sajadsarlaki.github.io" },
 				"imgs": ["/asset/imgs/sajad.png", "/asset/imgs/astro.png"]
+			},
+			{
+				"title": "Task Management",
+				"description": "A wee small task organizing app!!",
+				"sub_description": [
+					"A tiny responsive task-manager built with React. I aimed to enhance my styling skills using BEM!!"
+				],
+				"keywords": ["Responsive", "BEM"],
+				"links": { "github": "https://github.com/sajadsarlaki/task_management/" },
+				"imgs": ["/asset/imgs/task_management.png", "/asset/imgs/bem.png"]
 			}
 		]
 	},
