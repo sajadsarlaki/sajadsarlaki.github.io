@@ -12,17 +12,17 @@ const className = Astro.props.class;
       projectsContent.projects.map((project, index) => (
         <Animat  class="main-skill-item" delay={3*index + "00"} animationName="fadeIn-from-bottom">
 
-        <a href={project.links.github} target="_blank"><li   class="project-item">
+        <a href={project.links.github} target="_blank"><li   class="project-item h-product">
           <div class="upper-card">
             <h3 class="title" data-index={index}>
               {project.title}
             </h3>
             {project.imgs.map((src) => (
-              <img data-img-index={index} class="project-img" src={src} />
+              <img data-img-index={index} class="project-img u-photo" src={src} alt={src.split('/').pop().split('.')[0]} />
             ))}
           </div>
           <div class="lower-card">
-            <p class="project-description">{project.description}</p>
+            <p class="project-description p-description">{project.description}</p>
             {project.sub_description.length <= 1 ? (
               <p class="project-sub-description">{project.sub_description}</p>
             ) : (

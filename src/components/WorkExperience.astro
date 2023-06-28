@@ -11,8 +11,8 @@ import Animate from "./Animat.astro"
     {
       workExperienceContent.jobs.map((job, index) => {return(
         <Animate delay={2*index+'00'} class="work-item" animationName="fadeIn-from-left">
-        <li>
-            <img class="job-icon" src={job.icon} alt="" />
+        <li class="h-event">
+            <img class="job-icon" src={job.icon} alt={job.company} />
               <h2>{job.position}</h2>
               <strong>{job.company} </strong>({job.year})
               <br />

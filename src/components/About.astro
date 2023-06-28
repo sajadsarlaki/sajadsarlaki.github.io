@@ -5,13 +5,13 @@ import SectionTitle from "./SectionTitle.astro";
 import Animat from "./Animat.astro";
 ---
 
-<section id="about">
+<section id="about" class="h-card">
   <div class="text">
     <!-- <h2 class="title">{about.title}</h2> -->
-    <p class="name">{about.paragraphs[0]}</p>
+    <p class="name p-name">{about.paragraphs[0]}</p>
     {
       (
-        <p>
+        <p class="p-summary">
           {about.paragraphs[1].split("Frontend Developer")[0]}
           <HoverReveal
             text="Frontend Developer"
@@ -24,7 +24,7 @@ import Animat from "./Animat.astro";
         </p>
       )
     }
-    <div class="social-media">
+    <div class="social-media p-contact">
       {
         about.social.map((item) => (
           <a
@@ -43,11 +43,11 @@ import Animat from "./Animat.astro";
   
   <Animat class="picture" delay="300" duration="1000"  animationName="fadeIn-appearance">
   <div >
-    <img  src="asset/imgs/sajad.png" alt="" class="image" />
+    <img  src="asset/imgs/sajad.png" alt="Sajad Sarlaki" class="image" />
   </div>
 </Animat>
   <Animat class="portal" duration="1000" animationName="fadeIn-from-bottom">
-  <img src="asset/gifs/portal.gif" alt="" class="portal"  />
+  <img src="asset/gifs/portal.gif" alt="Rick's portal" class="portal"  />
   </Animat>
 
   <SectionTitle

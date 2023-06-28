@@ -44,7 +44,7 @@
 				"icon": "/asset/imgs/programming.png"
 			},
 			{
-				"title": "Web Development ",
+				"title": "Web Development",
 				"items": ["HTML5", "CSS3", "jQuery", "React"],
 				"icon": "/asset/imgs/web.png"
 			},

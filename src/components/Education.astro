@@ -7,7 +7,7 @@ import SectionTitle from "./SectionTitle.astro";
 <section id="education">
   {
     educationContent.degrees.map((degree, index) => (
-      <div class="education">
+      <div class="education h-event">
         <Animat class="education-desc" animationName="fadeIn-from-left">
         <div>
           <img class="education-img" src={degree.imgs.amirkaboir_icon} alt="" />
@@ -24,8 +24,8 @@ import SectionTitle from "./SectionTitle.astro";
         </Animat>
         <Animat class="graduation-imgs" delay="200" animationName="fadeIn-from-left">
         <div >
-          <img src={degree.imgs.graduation} alt="" class="grad" />
-          <img src={degree.imgs.sardar} alt="" class="sardar" />
+          <img src={degree.imgs.graduation} alt="graduation" class="grad" />
+          <img src={degree.imgs.sardar} alt="Amirkabir" class="sardar" />
         </div>
         </Animat>
       </div>

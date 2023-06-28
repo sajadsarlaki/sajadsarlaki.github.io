@@ -48,5 +48,5 @@ const { text, gifUrl, position = 'top', size =100 } = Astro.props;
 
 <span class="hover-container">
   <span class={`hover-text ${className}`} >{text}</span>
- <img class={`hover-gif ${position} `}  src={gifUrl} alt="" width={size} height={size} >
+ <img class={`hover-gif ${position} `}  src={gifUrl} alt={text} width={size} height={size} >
 </span>
