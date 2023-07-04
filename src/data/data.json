@@ -110,7 +110,8 @@
 					"Worked with mail service modules",
 					"Designed web pages and applications"
 				],
-				"icon": "/asset/imgs/bayan.png"
+				"icon": "/asset/imgs/bayan.png",
+				"url":"http://bayan.co.ir/"
 			},
 			{
 				"position": "Co-Founder",
@@ -122,11 +123,12 @@
 					"Developed web apps (React)",
 					"Trained interns in front-end dev (React)"
 				],
-				"icon": "/asset/imgs/utopia.png"
+				"icon": "/asset/imgs/utopia.png",
+				"url":"https://utopiapp.ir"
 			},
 			{
 				"position": "Teaching Assistant",
-				"company": "Amirkabir University of Technology",
+				"company": "Amirkabir University",
 				"year": "2018-2020",
 				"desc": [
 					"TA for Advanced Programming",
@@ -134,7 +136,8 @@
 					"TA for Computational AI",
 					"Developed, scored tasks, aided students with issues"
 				],
-				"icon": "/asset/imgs/amirkabir.png"
+				"icon": "/asset/imgs/amirkabir.png",
+				"url":"https://aut.ac.ir/en"
 			}
 		]
 	},

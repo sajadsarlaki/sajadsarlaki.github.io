@@ -4,29 +4,46 @@ import Animat from "./Animat.astro";
 import SectionTitle from "./SectionTitle.astro";
 ---
 
-<section id="education">
+<section id="education" itemscope itemtype="https://schema.org/EducationEvent">
   {
     educationContent.degrees.map((degree, index) => (
       <div class="education h-event">
         <Animat class="education-desc" animationName="fadeIn-from-left">
-        <div>
-          <img class="education-img" src={degree.imgs.amirkaboir_icon} alt="" />
-            <h2 class="title">{degree.degree}</h2>
-          <h3>
-            {degree.institution} {degree.year}
-          </h3>
-          <ul class="education-desc-list">
-            {degree.description.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
+          <div>
+            <img
+              class="education-img"
+              src={degree.imgs.amirkaboir_icon}
+              alt=""
+            />
+            <h2 class="title" itemprop="name">
+              {degree.degree}
+            </h2>
+            <h3 itemprop="location">
+              {degree.institution}{" "}
+              <span itemprop="startDate">{degree.year.split("-")[0]}</span> -
+              <span itemprop="endDate">{degree.year.split("-")[1]}</span>
+            </h3>
+            <ul class="education-desc-list">
+              {degree.description.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
         </Animat>
-        <Animat class="graduation-imgs" delay="200" animationName="fadeIn-from-left">
-        <div >
-          <img src={degree.imgs.graduation} alt="graduation" class="grad" />
-          <img src={degree.imgs.sardar} alt="Amirkabir" class="sardar" />
-        </div>
+        <Animat
+          class="graduation-imgs"
+          delay="200"
+          animationName="fadeIn-from-left"
+        >
+          <div>
+            <img
+              src={degree.imgs.graduation}
+              alt="graduation"
+              class="grad"
+              itemprop="image"
+            />{" "}
+            <img src={degree.imgs.sardar} alt="Amirkabir" class="sardar" />
+          </div>
         </Animat>
       </div>
     ))
@@ -131,12 +148,12 @@ import SectionTitle from "./SectionTitle.astro";
     .education-img {
       width: 20%;
     }
-    .graduation-imgs img{
-      transform: scale(.6);
+    .graduation-imgs img {
+      transform: scale(0.6);
       z-index: 1;
     }
-    .graduation-imgs img:last-child{
-      transform: scale(.5);
+    .graduation-imgs img:last-child {
+      transform: scale(0.5);
     }
   }
 </style>

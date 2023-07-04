@@ -5,30 +5,36 @@ import Animate from "./Animat.astro"
 ---
 
 <section id="work">
-  <!-- <h2>{workExperienceContent.title}</h2> -->
   <ul class="list-container">
-
     {
-      workExperienceContent.jobs.map((job, index) => {return(
-        <Animate delay={2*index+'00'} class="work-item" animationName="fadeIn-from-left">
-        <li class="h-event">
-            <img class="job-icon" src={job.icon} alt={job.company} />
-              <h2>{job.position}</h2>
-              <strong>{job.company} </strong>({job.year})
-              <br />
-              <ul class="desc-list">
-                {job.desc.map((item) => (
-                  <li class="desc-item">{item}</li>
+      workExperienceContent.jobs.map((job, index) => {
+        return(
+          <Animate delay={2*index+'00'} class="work-item" animationName="fadeIn-from-left">
+            <li class="h-event" itemscope itemtype="https://schema.org/Organization">
+              <img class="job-icon" src={job.icon} alt={job.company} itemprop="logo" />
+              <h2 itemprop="name">{job.company}</h2>
+               <link itemprop="url" href={job.url} />
+              <div itemprop="employee" itemscope itemtype="https://schema.org/EmployeeRole">
+                <strong itemprop="roleName">{job.position}</strong>
+                (<time ><span itemprop="startDate">{job.year.split('-')[0]}</span>-<span itemprop="endtDate">{job.year.split('-')[1]}</span></time>)
+                <ul class="desc-list">
+                  {job.desc.map((item) => (
+                    <li class="desc-item" itemprop="description">{item}</li>
                   ))}
-                  </ul>
-                  </li>
-      </Animate>
-   ) })
+                </ul>
+              </div>
+            </li>
+          </Animate>
+        )
+      })
     }
   </ul>
   <SectionTitle text="Skills" color="var(--orange-color)" hrefLink="#skills" />
   <div class="line"></div>
 </section>
+
+
+
 
 <style>
   #work {

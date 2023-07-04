@@ -4,17 +4,17 @@ import SectionTitle from "./SectionTitle.astro";
 import Animat from "./Animat.astro";
 ---
 
-<section id="skills">
-  <ul class="main-skill-list" >
+ <section id="skills" itemscope itemtype="https://schema.org/ItemList">
+    <ul class="main-skill-list" >
+
     {
       skillsContent.skills.map((skill, index) => (
         <Animat  class="main-skill-item" delay={2*index + "00"} animationName="fadeIn-from-left" >
-        <li class="p-skill">
-          <img class="icon" src={skill.icon} alt={skill.title} />
-          <h3 class="title">{skill.title}</h3>
-          <ul>
+<li class="p-skill" >          <img class="icon" src={skill.icon} alt={skill.title} />
+          <h3 itemprop="itemListElement" class="title" >{skill.title}</h3>
+          <ul >
             {skill.items.map((item) => (
-              <li>{item}</li>
+              <li itemprop="name">{item}</li>
             ))}
           </ul>
         </li>
