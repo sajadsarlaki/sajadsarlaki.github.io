@@ -9,11 +9,14 @@ import Animat from "./Animat.astro";
   <div class="text">
     <!-- <h2 class="title">{about.title}</h2> -->
   <p class="name p-name" itemprop="name">{about.paragraphs[0]}</p>
+  <p class="name p-name" itemprop="name" style="display: none;">سجاد سرلکی</p>
+
     {
       (
   <p class="p-summary" itemprop="description">
           {about.paragraphs[1].split("Frontend Developer")[0]}
           <HoverReveal
+            itemprop="jobTitle"
             text="Frontend Developer"
             gifUrl={"asset/gifs/css.gif"}
             position="top"
@@ -44,7 +47,7 @@ import Animat from "./Animat.astro";
   
   <Animat class="picture" delay="300" duration="1000"  animationName="fadeIn-appearance">
   <div >
-    <img  src="asset/imgs/sajad.png" alt="Sajad Sarlaki" class="image" itemid="image" />
+    <img  src="asset/imgs/sajad.png" alt="Sajad Sarlaki - سجاد سرلکی" class="image" itemprop="image" />
   </div>
 </Animat>
   <Animat class="portal" duration="1000" animationName="fadeIn-from-bottom">
