@@ -11,7 +11,7 @@ import Animate from "./Animat.astro"
         return(
           <Animate delay={2*index+'00'} class="work-item" animationName="fadeIn-from-left">
             <li class="h-event" itemscope itemtype="https://schema.org/Organization">
-              <img class="job-icon" src={job.icon} alt={job.company} itemprop="logo" />
+              <img class="job-icon" src={job.icon} alt={`logo of the ${job.company} company`} itemprop="logo" />
               <h2 itemprop="name">{job.company}</h2>
                <link itemprop="url" href={job.url} />
               <div itemprop="employee" itemscope itemtype="https://schema.org/EmployeeRole">

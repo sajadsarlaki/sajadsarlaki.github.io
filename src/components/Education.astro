@@ -13,7 +13,7 @@ import SectionTitle from "./SectionTitle.astro";
             <img
               class="education-img"
               src={degree.imgs.amirkaboir_icon}
-              alt=""
+              alt="Icon of Amirkabir University of Technology"
             />
             <h2 class="title" itemprop="name">
               {degree.degree}
@@ -38,11 +38,12 @@ import SectionTitle from "./SectionTitle.astro";
           <div>
             <img
               src={degree.imgs.graduation}
-              alt="graduation"
+              alt="a photo of Sajad Sarlaki's graduation"
               class="grad"
               itemprop="image"
+              loading="lazy"
             />{" "}
-            <img src={degree.imgs.sardar} alt="Amirkabir" class="sardar" />
+            <img src={degree.imgs.sardar} alt="A photo of Amirkabir University of Technology" class="sardar" loading="lazy"/>
           </div>
         </Animat>
       </div>

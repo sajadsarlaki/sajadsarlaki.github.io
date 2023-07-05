@@ -10,7 +10,7 @@ import Animat from "./Animat.astro";
     {
       skillsContent.skills.map((skill, index) => (
         <Animat  class="main-skill-item" delay={2*index + "00"} animationName="fadeIn-from-left" >
-<li class="p-skill" >          <img class="icon" src={skill.icon} alt={skill.title} />
+<li class="p-skill" >          <img class="icon" src={skill.icon} alt={`logos of ${skill.title}`} />
           <h3 itemprop="itemListElement" class="title" >{skill.title}</h3>
           <ul >
             {skill.items.map((item) => (

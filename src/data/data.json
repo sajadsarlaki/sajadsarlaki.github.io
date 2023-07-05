@@ -11,7 +11,7 @@
 		"social": [
 			{
 				"name": "linkedin",
-				"link": "https://www.linkedin.com/in/sajad-sarlaki/",
+				"link": "https://linkedin.com/in/sajad-sarlaki/",
 				"icon": "/asset/imgs/linkedin.png",
 				"animatedIcon": "/asset/gifs/linkedin.gif"
 			},
@@ -111,7 +111,7 @@
 					"Designed web pages and applications"
 				],
 				"icon": "/asset/imgs/bayan.png",
-				"url":"http://bayan.co.ir/"
+				"url":"https://bayan.co.ir/"
 			},
 			{
 				"position": "Co-Founder",

@@ -10,7 +10,7 @@ const className = Astro.props.class;
 ---
 
 <a href={hrefLink}
-    ><h2 style={`background-color:${color}`} class={position}>
+    title=`Link to ${text} section`><h2 style={`background-color:${color}`} class={position}>
         {text}
         {beckon ? <span class="beckon text-5xl block"> 👇</span> : ""}
     </h2>
