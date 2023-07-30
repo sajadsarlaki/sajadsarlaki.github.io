@@ -12,74 +12,75 @@ import { SEO } from "astro-seo";
 
 <!DOCTYPE html>
 <html lang="en">
-	<meta name="language" content="English, Persian" />
+	<head>
+		<meta name="language" content="English, Persian" />
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta
-		name="google-site-verification"
-		content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
-	/>
-	<meta name="robots" content="index, follow" />
-	<meta
-		name="google-site-verification"
-		content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
-	/>
-	<SEO
-		title="Sajad Sarlaki"
-		description="Sajad Sarlaki: Welcome to my personal website! I'm a JavaScript developer with a diverse portfolio of projects. Built with Astro, my website showcases my skills and work in web development."
-		openGraph={{
-			basic: {
-				title: "Sajad Sarlaki",
-				type: "website",
-				image: "/asset/imgs/twitter-preview.png",
-			},
-		}}
-		twitter={{
-			creator: "@Sajadsarlaki_",
-		}}
-		extend={{
-			link: [
-				{ rel: "icon", href: "/asset/imgs/favicon.ico" },
-				{
-					rel: "apple-touch-icon",
-					sizes: "180x180",
-					href: "/asset/imgs/apple-touch-icon.png",
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="google-site-verification"
+			content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="google-site-verification"
+			content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
+		/>
+		<SEO
+			title="Sajad Sarlaki"
+			description="Sajad Sarlaki: Welcome to my personal website! I'm a JavaScript developer with a diverse portfolio of projects. Built with Astro, my website showcases my skills and work in web development."
+			openGraph={{
+				basic: {
+					title: "Sajad Sarlaki",
+					type: "website",
+					image: "/asset/imgs/twitter-preview.png",
 				},
-				{
-					rel: "icon",
-					type: "image/png",
-					sizes: "32x32",
-					href: "/asset/imgs/favicon-32x32.png",
-				},
-				{
-					rel: "icon",
-					type: "image/png",
-					sizes: "16x16",
-					href: "/asset/imgs/favicon-16x16.png",
-				},
-				{ rel: "manifest", href: "/asset/imgs/site.webmanifest" },
-			],
-			meta: [
-				{ name: "viewport", content: "width=device-width, initial-scale=1" },
-				{ name: "msapplication-TileColor", content: "#da532c" },
-				{ name: "theme-color", content: "#ffffff" },
-			],
-		}}
-	/>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCP95DVKWL"
-	></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
+			}}
+			twitter={{
+				creator: "@Sajadsarlaki_",
+			}}
+			extend={{
+				link: [
+					{ rel: "icon", href: "/asset/imgs/favicon.ico" },
+					{
+						rel: "apple-touch-icon",
+						sizes: "180x180",
+						href: "/asset/imgs/apple-touch-icon.png",
+					},
+					{
+						rel: "icon",
+						type: "image/png",
+						sizes: "32x32",
+						href: "/asset/imgs/favicon-32x32.png",
+					},
+					{
+						rel: "icon",
+						type: "image/png",
+						sizes: "16x16",
+						href: "/asset/imgs/favicon-16x16.png",
+					},
+					{ rel: "manifest", href: "/asset/imgs/site.webmanifest" },
+				],
+				meta: [
+					{ name: "viewport", content: "width=device-width, initial-scale=1" },
+					{ name: "msapplication-TileColor", content: "#da532c" },
+					{ name: "theme-color", content: "#ffffff" },
+				],
+			}}
+		/>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCP95DVKWL"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-		gtag("config", "G-FCP95DVKWL");
-	</script>
-
+			gtag("config", "G-FCP95DVKWL");
+		</script>
+	</head>
 
 	<body>
 		<Header />
