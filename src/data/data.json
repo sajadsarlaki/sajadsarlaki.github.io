@@ -4,7 +4,7 @@
 		"title": "About Me",
 		"paragraphs": [
 			"Sajad Sarlaki",
-			"I am a Frontend Developer with 2 years of experience...",
+			"I am a Frontend Developer with 3 years of experience...",
 			"I am currently working as a Frontend Developer...",
 			"I am passionate about building great user experiences..."
 		],
@@ -22,16 +22,16 @@
 				"animatedIcon": "/asset/gifs/github.gif"
 			},
 			{
-				"name": "twitter",
-				"link": "https://twitter.com/Sajadsarlaki_",
-				"icon": "/asset/imgs/twitter.png",
-				"animatedIcon": "/asset/gifs/twitter.gif"
-			},
-			{
 				"name": "email",
 				"link": "mailto:sajad.sarlaki1999@gmail.com?subject = Feedback&body = Message",
 				"icon": "/asset/imgs/gmail.png",
 				"animatedIcon": "/asset/gifs/gmail.gif"
+			},
+			{
+				"name": "resume",
+				"link": "/asset/resume.pdf",
+				"icon": "/asset/imgs/resume_icon.png",
+				"animatedIcon": "/asset/gifs/resume_icon.gif"
 			}
 		]
 	},
@@ -92,9 +92,91 @@
 			{
 				"degree": "B.Sc in Computer Engineering",
 				"institution": "Amirkabir University of Technology",
-				"description":["GPA: 3.52/4.0 (17/20)","last two years: 3.9/4 (18.86/20)"],
+				"description": [
+					"GPA: 3.52/4.0 (17/20)",
+					"last two years: 3.9/4 (18.86/20)"
+				],
 				"year": "2017-2022",
-				"imgs":{"sardar":"/asset/imgs/sardar.png","graduation":"/asset/imgs/graduation.png", "amirkaboir_icon":"/asset/imgs/amirkabir.png"}
+				"imgs": {
+					"sardar": "/asset/imgs/sardar.png",
+					"graduation": "/asset/imgs/graduation.png",
+					"amirkaboir_icon": "/asset/imgs/amirkabir.png"
+				}
+			}
+		],
+		"courseCategories": [
+			{
+				"categoryName": "Software Courses",
+				"courses": [
+					{
+						"name": "Principles of Compiler Design",
+						"grade": "20/20"
+					},
+					{
+						"name": "Software Testing",
+						"grade": "18.7/20"
+					},
+					{
+						"name": "Web Programming",
+						"grade": "20/20"
+					},
+					{
+						"name": "Mobile Programming",
+						"grade": "18.5/20"
+					}
+				]
+			},
+			{
+				"categoryName": "Hardware Courses",
+				"courses": [
+					{
+						"name": "Microprocessor and Assembly Language",
+						"grade": "20/20"
+					}
+				]
+			},
+			{
+				"categoryName": "Network Courses",
+				"courses": [
+					{
+						"name": "Principles of Cloud Computing",
+						"grade": "19.25/20"
+					},
+					{
+						"name": "Principles of Network Security",
+						"grade": "17.5/20"
+					}
+				]
+			},
+			{
+				"categoryName": "AI Courses",
+				"courses": [
+					{
+						"name": "Principles of Computational Intelligence",
+						"grade": "20/20"
+					},
+					{
+						"name": "Data Mining",
+						"grade": "17.5/20"
+					}
+				]
+			},
+			{
+				"categoryName": "Other Courses",
+				"courses": [
+					{
+						"name": "Engineering Statistics",
+						"grade": "19/20"
+					},
+					{
+						"name": "Signals and Systems",
+						"grade": "18/20"
+					},
+					{
+						"name": "Basics of Economics",
+						"grade": "20/20"
+					}
+				]
 			}
 		]
 	},
@@ -111,7 +193,7 @@
 					"Designed web pages and applications"
 				],
 				"icon": "/asset/imgs/bayan.png",
-				"url":"https://bayan.co.ir/"
+				"url": "https://bayan.co.ir/"
 			},
 			{
 				"position": "Co-Founder",
@@ -124,7 +206,7 @@
 					"Trained interns in front-end dev (React)"
 				],
 				"icon": "/asset/imgs/utopia.png",
-				"url":"https://utopiapp.ir"
+				"url": "https://utopiapp.ir"
 			},
 			{
 				"position": "Teaching Assistant",
@@ -137,7 +219,7 @@
 					"Developed, scored tasks, aided students with issues"
 				],
 				"icon": "/asset/imgs/amirkabir.png",
-				"url":"https://aut.ac.ir/en"
+				"url": "https://aut.ac.ir/en"
 			}
 		]
 	},
@@ -206,7 +288,9 @@
 					"Currently, it's the very page you're viewing:) A personal web-page created utilizing Astro js!"
 				],
 				"keywords": ["Portfolio", "Astrojs", "css"],
-				"links": { "github": "https://github.com/sajadsarlaki/sajadsarlaki.github.io" },
+				"links": {
+					"github": "https://github.com/sajadsarlaki/sajadsarlaki.github.io"
+				},
 				"imgs": ["/asset/imgs/sajad.png", "/asset/imgs/astro.png"]
 			},
 			{
@@ -216,7 +300,9 @@
 					"A tiny responsive task-manager built with React. I aimed to enhance my styling skills using BEM!!"
 				],
 				"keywords": ["Responsive", "BEM"],
-				"links": { "github": "https://github.com/sajadsarlaki/task_management/" },
+				"links": {
+					"github": "https://github.com/sajadsarlaki/task_management/"
+				},
 				"imgs": ["/asset/imgs/task_management.png", "/asset/imgs/bem.png"]
 			}
 		]
