@@ -11,8 +11,8 @@ import SectionTitle from "./SectionTitle.astro";
         <Animat class="education-desc" animationName="fadeIn-from-left">
           <div>
             <img
-              class="education-img"
-              src={degree.imgs.amirkaboir_icon}
+              class="institution-icon"
+              src={degree.imgs.institution_icon}
               alt="Icon of Amirkabir University of Technology"
             />
             <h2 class="title" itemprop="name">
@@ -28,23 +28,37 @@ import SectionTitle from "./SectionTitle.astro";
                 <li>{item}</li>
               ))}
             </ul>
+            {degree.hyperlinks && (
+              <ul class="education-links">
+                {degree.hyperlinks.map((item) => (
+                  <li>
+                    {item.title}:
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="education-link"
+                      itemprop="url"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </Animat>
         <Animat
-          class="graduation-imgs"
+          class="banner-imgs"
           delay="200"
           animationName="fadeIn-from-left"
         >
-          <div>
-            <img
-              src={degree.imgs.graduation}
-              alt="a photo of Sajad Sarlaki's graduation"
-              class="grad"
-              itemprop="image"
-              loading="lazy"
-            />{" "}
-            <img src={degree.imgs.sardar} alt="A photo of Amirkabir University of Technology" class="sardar" loading="lazy"/>
-          </div>
+          <img
+            src={degree.imgs.banner}
+            alt="A photo of Amirkabir University of Technology"
+            class="banner-img"
+            loading="lazy"
+          />
         </Animat>
       </div>
     ))
@@ -59,6 +73,7 @@ import SectionTitle from "./SectionTitle.astro";
 <style>
   #education {
     position: relative;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -82,19 +97,13 @@ import SectionTitle from "./SectionTitle.astro";
     color: var(--blue-color);
   }
   .education-desc h3 {
-    margin: 0.5rem 0;
+    margin: 0.65rem 0;
   }
   .education-desc-list {
     list-style-type: none;
-    margin: 0 0.5rem;
+    margin: 0 ;
     padding: 0;
     line-height: 1.5rem;
-  }
-  .graduation-imgs {
-    position: relative;
-  }
-  .graduation-imgs {
-    transform: scale(1);
   }
 
   .grad {
@@ -104,11 +113,55 @@ import SectionTitle from "./SectionTitle.astro";
     transform: scale(1.15);
   }
 
-  .sardar-img {
-    position: relative;
+  .banner-img {
+    width: 35vw;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
-  .education-img {
-    width: 10%;
+  .institution-icon {
+    width: 5rem;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .education-links {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .education-links li {
+    display: flex;
+    align-items: center;
+    color: var(--text-color, #222);
+    background: transparent;
+    
+    transition: background 0.2s;
+    margin: -.25rem 0;
+  }
+
+ 
+
+  .education-link {
+    color: var(--blue-color);
+    font-weight: 500;
+    text-decoration: underline dotted;
+    transition: color 0.2s, text-decoration-thickness 0.2s;
+    margin-left: 0.4rem;
+    word-break: break-all;
+  }
+
+  .education-link:hover,
+  .education-link:focus {
+    color: var(--blue-color);
+    text-decoration-thickness: 2.5px;
+    outline: none;
   }
 
   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
@@ -133,6 +186,13 @@ import SectionTitle from "./SectionTitle.astro";
     .education-img {
       width: 5%;
     }
+    .education-links {
+      font-size: 1rem;
+      gap: 0.25rem;
+    }
+    .education-links li {
+      padding: 0.15rem 0.4rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -146,15 +206,11 @@ import SectionTitle from "./SectionTitle.astro";
     .education-desc-list {
       font-size: 0.8rem;
     }
-    .education-img {
-      width: 20%;
+    .banner-img {
+      display: none;
     }
-    .graduation-imgs img {
-      transform: scale(0.6);
-      z-index: 1;
-    }
-    .graduation-imgs img:last-child {
-      transform: scale(0.5);
+    .education-links {
+      font-size: 0.95rem;
     }
   }
 </style>

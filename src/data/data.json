@@ -90,6 +90,33 @@
 		"title": "Education",
 		"degrees": [
 			{
+				"degree": "M.Sc in Computer Engineering",
+				"institution": "University of Calgary",
+				"description": [
+					"In progress (First year)",
+					"Working with the ETHEREAL Research group"
+				],
+				"year": "2025-Present",
+				"imgs": {
+					"institution_icon": "/asset/imgs/ucalgary.png",
+					"banner": "/asset/imgs/ucalgary_banner.png"
+				},
+				"hyperlinks":[{
+					"title":"Supervisor",
+					"name": "Dr. Diwakar krishnamurthy",
+					"url": "https://profiles.ucalgary.ca/diwakar-krishnamurthy"
+					
+
+				},
+			{
+					"title":"Research Group",
+					"name":"ETHEREAL Research Group",
+					"url": "https://github.com/ETHEREAL-Research-Group/"
+					
+
+				} ]
+			},
+			{
 				"degree": "B.Sc in Computer Engineering",
 				"institution": "Amirkabir University of Technology",
 				"description": [
@@ -98,11 +125,11 @@
 				],
 				"year": "2017-2022",
 				"imgs": {
-					"sardar": "/asset/imgs/sardar.png",
-					"graduation": "/asset/imgs/graduation.png",
-					"amirkaboir_icon": "/asset/imgs/amirkabir.png"
+					"institution_icon": "/asset/imgs/amirkabir.png",
+					"banner": "/asset/imgs/amirkabir_banner.png"
 				}
 			}
+		
 		],
 		"courseCategories": [
 			{
