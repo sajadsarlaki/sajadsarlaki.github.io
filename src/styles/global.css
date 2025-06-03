@@ -36,7 +36,7 @@ a {
 	color: var(--text-color);
 }
 
-section:not(section:first-child) {
+section:not(section:first-child):not(section:last-child) {
 	/* border: 1px solid red; */
 	min-height: 90vh;
 	padding: 5vh 0 5vh 0;

@@ -29,8 +29,9 @@ import Animat from "./Animat.astro";
     }
   <div class="social-media p-contact" >
       {
-        about.social.map((item) => (
-          <a
+        about.social.map((item) => {
+          if(["linkedin", "github", "email", "resume"].includes(item.name)){
+          return <a
             itemprop="contactPoint"
             href={item.link}
             target="_blank"
@@ -42,7 +43,7 @@ import Animat from "./Animat.astro";
             title={`Link to my ${item.name}`}
           
           ></a>
-        ))
+        }})
       }
     </div>
   </div>

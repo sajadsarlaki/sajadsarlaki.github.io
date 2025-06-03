@@ -6,8 +6,14 @@ import Education from "../components/Education.astro";
 import WorkExperience from "../components/WorkExperience.astro";
 import Projects from "../components/Projects.astro";
 import Hobbies from "../components/Hobbies.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import { SEO } from "astro-seo";
+import { about } from "../data/data.json";
+
+const sameAs = about.social
+	.filter(item => ["linkedin", "github", "email", "resume"].includes(item.name))
+	.map(item => item.link);
 ---
 
 <!DOCTYPE html>
@@ -38,6 +44,11 @@ import { SEO } from "astro-seo";
 			}}
 			twitter={{
 				creator: "@Sajadsarlaki_",
+			}}
+			schema={{
+				type: "Person",
+				name: "Sajad Sarlaki",
+				sameAs: sameAs,
 			}}
 			extend={{
 				link: [
@@ -91,6 +102,7 @@ import { SEO } from "astro-seo";
 			<Projects />
 			<Education />
 			<!-- <Hobbies  /> -->
+			 <Footer>
 		</main>
 	</body><!-- <script>
   const themeToggle = document.getElementById("theme-toggle");

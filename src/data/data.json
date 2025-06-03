@@ -2,6 +2,7 @@
 	"header": { "title": "Sajad Sarlaki" },
 	"about": {
 		"title": "About Me",
+		"name": "Sajad Sarlaki",
 		"paragraphs": [
 			"Sajad Sarlaki",
 			"I am a Frontend Developer with 3 years of experience...",
@@ -32,6 +33,30 @@
 				"link": "/asset/resume.pdf",
 				"icon": "/asset/imgs/resume_icon.png",
 				"animatedIcon": "/asset/gifs/resume_icon.gif"
+			},
+			{
+				"name": "twitter",
+				"link": "https://twitter.com/Sajadsarlaki_",
+				"icon": "/asset/imgs/twitter.png",
+				"animatedIcon": "/asset/gifs/twitter.gif"
+			},
+			{
+				"name": "instagram",
+				"link": "https://www.instagram.com/sajad_sarlaki_/",
+				"icon": "/asset/imgs/instagram.png",
+				"animatedIcon": "/asset/gifs/instagram.gif"
+			},
+			{
+				"name": "goodreads",
+				"link": "https://www.goodreads.com/user/show/152800491-sajad-sarlaki",
+				"icon": "/asset/imgs/goodreads.png",
+				"animatedIcon": "/asset/gifs/goodreads.gif"
+			},
+			{
+				"name": "imdb",
+				"link": "https://www.imdb.com/user/ur103527383/?ref_=ext_shr_lnk",
+				"icon": "/asset/imgs/imdb.png",
+				"animatedIcon": "/asset/gifs/imdb.gif"
 			}
 			
 		]

@@ -1,0 +1,69 @@
+---
+import { about } from "../data/data.json";
+---
+
+<section id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <p>&copy; {new Date().getFullYear()} {about.name}. All rights reserved.</p>
+    </div>
+
+    <div class="footer-social">
+      {about.social?.map(social => {
+        if (["twitter", "instagram", "goodreads", "imdb"].includes(social.name)) {
+          return (
+            <a
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer external"
+              aria-label={social.name}
+              title={`Follow on ${social.name.charAt(0).toUpperCase() + social.name.slice(1)}`}
+              itemprop="sameAs"
+            >
+              <img src={social.icon} alt={social.name} width="24" height="24" />
+            </a>
+          );
+        }
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+#footer {
+  background: #181818;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.footer-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+.footer-social a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: .5rem;
+  }
+  
+}
+</style>
+
