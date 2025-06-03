@@ -9,7 +9,7 @@ import SectionTitle from "./SectionTitle.astro";
     educationContent.degrees.map((degree, index) => (
       <div class="education h-event">
         <Animat class="education-desc" animationName="fadeIn-from-left">
-          <div>
+          <div class="education-content">
             <img
               class="institution-icon"
               src={degree.imgs.institution_icon}
@@ -166,13 +166,37 @@ import SectionTitle from "./SectionTitle.astro";
 
   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
 
-  @media (max-width: 1024px) {
-    .education {
-      flex-direction: column;
-    }
-  }
+
 
   @media (max-width: 768px) {
+    #education{
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .education{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .education-content{
+    background-color: #1d1e24;
+    padding: 1.5rem 1rem;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    }
+    .institution-icon{
+      /* align-self: center; */
+    }
+    .banner-img{
+      display: none;
+    }
+    .education .title{
+      font-size: 1.2rem;
+    }
     .education-desc {
       font-size: 1.2rem;
       line-height: 2rem;
@@ -196,6 +220,9 @@ import SectionTitle from "./SectionTitle.astro";
   }
 
   @media (max-width: 480px) {
+      .education-content{
+        min-width: 80vw;
+      }
     .education-desc {
       font-size: 1rem;
       line-height: 1.5rem;
